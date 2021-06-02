@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block title %}
+LogIn
+{% endblock %}
+
+{% block content%}
+
+<form method="post">
+    <div class="container">
+        <h1>Inicia Sesi&oacute;n</h1>
+        <hr>
+        {% if alerta %}
+        <div class="alerta">{{ alerta }}</div>
+        {% endif %}
+
+        <label for="nombre"><b>Nombre de Usuario</b></label>
+        <input type="text" pattern="^[a-zA-Z0-9]*$" placeholder="Escribe tu usuario" name="nombre" id="nombre" required>
+        <hr>
+
+        <label for="psw1"><b>Contrase&ntilde;a</b></label>
+        <input type="password" style="margin:5px 0 0px 0;" placeholder="Escribe la Contrase&ntilde;a" name="psw1"
+            id="psw1" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,15}"
+            title="Debe contener una mayÃºscula, una minÃºscula, un nÃºmero y longitud de 8 a 15 caracteres" required>
+
+
+        <button type="submit" onclick="setCookie()" class="registerbtn">Iniciar Sesi&oacute;n</button>
+    </div>
+
+</form>
+
+<script src={{ url_for('static', filename='js/login.js') }}></script>
+{% endblock %}

@@ -1,0 +1,23 @@
+{
+    "C_Cpp.errorSquiggles": "Enabled",
+    "files.associations": {
+        "link.h": "c",
+        "stdlib.h": "c",
+        "stdio.h": "c",
+        "string.h": "c",
+        "game.h": "c",
+        "object.h": "c",
+        "types.h": "c",
+        "game_reader.h": "c",
+        "screen.h": "c",
+        "game_management.h": "c",
+        "player.h": "c",
+        "set.h": "c",
+        "space.h": "c",
+        "die.h": "c",
+        "dialogue.h": "c",
+        "graphic_engine.h": "c",
+        "command.h": "c",
+        "dialogue_test.h": "c"
+    }
+}

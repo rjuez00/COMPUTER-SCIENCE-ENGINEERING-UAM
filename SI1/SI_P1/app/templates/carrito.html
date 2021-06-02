@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+
+{% block title %}
+Carrito
+{% endblock %}
+
+{% block header %}
+{% endblock%}
+
+{% block content%}
+<div class="container">
+   <div id="historyheader">
+      <h1>Carrito</h1>
+      {% for message in get_flashed_messages() %}
+        <h2>{{ message }}</h2>
+      {% endfor %}
+   </div>
+   {% if carrito %}
+   {% for pelicula in carrito %}
+   <div class="item">
+      <img src="{{ url_for('static', filename = pelicula.poster) }}" class="imgdesplegable" alt="poster">
+      <div class="left price">{{pelicula.precio}} &euro;</div>
+      <div class="left pedido"><input class="actualinputquantity" type="number" id="quantity{{loop.index}}" name="quantity" value={{pelicula.cuantity}} min="1"
+            onclick="updatecuantity('quantity{{loop.index}}', {{pelicula.id}}, '{{ url_for('.ajaxquantity') }}')" onkeydown="return false"></div>
+      <form method="post">
+         <input type="hidden" name="deletefilm" value="{{ pelicula.id }}" />
+         <button type="submit" class="left delete">X</button>
+      </form>
+      <div class="infodesplegable">
+         <div><b>{{pelicula.titulo}}</b></div>
+         <div>{{pelicula.director}}</div>
+         <div><i>{{pelicula.categoria}}</i></div>
+      </div>
+   </div>
+   {% endfor %}
+   <form method="post">
+      {% for pelicula in carrito %}
+      <input type="hidden" id="cantidad{{loop.index}}" name="cantidad{{loop.index}}" value=1 />
+      {% endfor %}
+      <button type="submit" onclick="copy_values({{ carrito|length }})">Comprar</button>
+   </form>
+   {% endif %}
+</div>
+<script src={{ url_for('static', filename='js/carrito.js') }}></script>
+
+{% endblock %}

@@ -1,0 +1,15 @@
+Name                                      Stmts   Miss  Cover   Missing
+-----------------------------------------------------------------------
+core/__init__.py                              0      0   100%
+core/admin.py                                11      0   100%
+core/apps.py                                  3      3     0%   1-5
+core/management/commands/populate.py        153      3    98%   36-52
+core/migrations/0001_initial.py               9      0   100%
+core/migrations/__init__.py                   0      0   100%
+core/models.py                               74      0   100%
+core/templatetags/__init__.py                 0      0   100%
+core/templatetags/core_template_tags.py       3      0   100%
+core/urls.py                                  4      0   100%
+core/views.py                               166      0   100%
+-----------------------------------------------------------------------
+TOTAL                                       423      6    99%

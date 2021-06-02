@@ -1,0 +1,33 @@
+{% extends 'core/base.html' %}
+{% load staticfiles %}
+
+{% block title_block %}
+    Apply Pair
+{% endblock %}
+
+{% block body_block %}
+    <h1>Apply Pair</h1>
+    {% if valid_students != None %}
+        Select the second
+        <form method="post" action="{% url 'applypair' %}">
+        {% csrf_token %}
+            <select name="students">
+                {% for id, first_name, last_name, username in valid_students %}
+                    {% if username != 'alumnodb' %}
+                        <option value={{id}}>{{last_name}}, {{first_name}}</option> 
+                    {% endif %}
+                {% endfor %}
+             </select>
+             <input type="submit" value="Apply Pair">
+        </form>
+    {% else %}
+            User has already selected a pair:
+        <ul>
+            <li>{{pair_applied.0.last_name}}, {{pair_applied.0.first_name}}</li>
+            <li>{{pair_applied.1.last_name}}, {{pair_applied.1.first_name}}</li>
+        </ul>
+    {% endif %}
+
+
+
+{% endblock %}

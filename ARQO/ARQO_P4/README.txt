@@ -1,0 +1,2 @@
+The scripts are designed for testing and plotting. In case you would want to use them, you have to call them from the root folder.
+We left the denoised version of the images so you could see the results we got, they will be overwritten if the program is called again.

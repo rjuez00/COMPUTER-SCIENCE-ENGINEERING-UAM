@@ -1,0 +1,75 @@
+{% extends "base.html" %}
+
+{% block title %}
+Info {{movie.titulo}}
+{% endblock %}
+
+{% block header %}
+<link rel="stylesheet" href={{ url_for('static', filename='css/info_pelicula.css') }} type="text/css">
+{% endblock %}
+
+{% block content%}
+
+<div id="container" class="clear">
+
+   <!-- TITULO -->
+   <section id="slider" class="clear">
+      <figure>
+         <img src="{{ url_for('static', filename = movie.poster) }}" alt="poster" class="posterinfo">
+         <figcaption>
+            <h1 id="movietitle">{{movie.titulo}}</h1><br>
+            <h2 id="moviedirector">{{movie.director}}</h2>
+            <form method="post">
+               <input type="hidden" name="id" value="{{ movie.id }}" />
+               <button onclick="alert('Añadido al Carrito')" type="submit">Comprar</button>
+            </form>
+
+         </figcaption>
+      </figure>
+         <div id="info">
+            <div id="annofilm">
+               {{movie.anno}}
+            </div>
+
+            <div id="genrefilm">
+               {{movie.categoria}}
+            </div>
+
+            <div id="pricefilm">
+               {{movie.precio}} &euro;
+            </div>
+         </div>
+
+
+      
+
+
+   </section>
+
+
+
+   <!--ACTORES-->
+
+   <div>
+      {% for i in range(movie.actores|length) %}
+      <article class="one_quarter">
+         <figure>
+            <img src={{ url_for('static', filename = movie.actores[i].foto) }} height="100" alt=picture>
+            <figcaption>
+               <h2>{{movie.actores[i].personaje}}</h2>
+               <p>{{movie.actores[i].nombre}}</p>
+            </figcaption>
+         </figure>
+      </article>
+      {% endfor %}
+
+
+
+   </div>
+
+
+</div>
+
+<script src={{ url_for('static', filename='js/info_pelicula.js') }}></script>
+
+{% endblock %}

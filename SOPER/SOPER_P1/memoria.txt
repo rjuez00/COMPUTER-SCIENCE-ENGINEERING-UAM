@@ -1,0 +1,190 @@
+EJERCICIO 1:
+a)
+
+man -k pthread
+
+pthread.h (7posix)   - threads
+pthread_atfork (3posix) - register fork handlers
+pthread_attr_destroy (3) - initialize and destroy thread attributes object
+pthread_attr_destroy (3posix) - destroy and initialize the thread attributes object
+pthread_attr_getaffinity_np (3) - set/get CPU affinity attribute in thread attributes object
+pthread_attr_getdetachstate (3) - set/get detach state attribute in thread attributes object
+pthread_attr_getdetachstate (3posix) - get and set the detachstate attribute
+pthread_attr_getguardsize (3) - set/get guard size attribute in thread attributes object
+pthread_attr_getguardsize (3posix) - get and set the thread guardsize attribute
+pthread_attr_getinheritsched (3) - set/get inherit-scheduler attribute in thread attributes object
+pthread_attr_getinheritsched (3posix) - get and set the inheritsched attribute (REALTIME THREADS)
+pthread_attr_getschedparam (3) - set/get scheduling parameter attributes in thread attributes object
+pthread_attr_getschedparam (3posix) - get and set the schedparam attribute
+pthread_attr_getschedpolicy (3) - set/get scheduling policy attribute in thread attributes object
+pthread_attr_getschedpolicy (3posix) - get and set the schedpolicy attribute (REALTIME THREADS)
+pthread_attr_getscope (3) - set/get contention scope attribute in thread attributes object
+pthread_attr_getscope (3posix) - get and set the contentionscope attribute (REALTIME THREADS)
+pthread_attr_getstack (3) - set/get stack attributes in thread attributes object
+pthread_attr_getstack (3posix) - get and set stack attributes
+pthread_attr_getstackaddr (3) - set/get stack address attribute in thread attributes object
+pthread_attr_getstacksize (3) - set/get stack size attribute in thread attributes object
+pthread_attr_getstacksize (3posix) - get and set the stacksize attribute
+pthread_attr_init (3) - initialize and destroy thread attributes object
+pthread_attr_init (3posix) - initialize the thread attributes object
+pthread_attr_setaffinity_np (3) - set/get CPU affinity attribute in thread attributes object
+pthread_attr_setdetachstate (3) - set/get detach state attribute in thread attributes object
+pthread_attr_setdetachstate (3posix) - set the detachstate attribute
+pthread_attr_setguardsize (3) - set/get guard size attribute in thread attributes object
+pthread_attr_setguardsize (3posix) - set the thread guardsize attribute
+pthread_attr_setinheritsched (3) - set/get inherit-scheduler attribute in thread attributes object
+pthread_attr_setinheritsched (3posix) - set the inheritsched attribute (REALTIME THREADS)
+pthread_attr_setschedparam (3) - set/get scheduling parameter attributes in thread attributes object
+pthread_attr_setschedparam (3posix) - set the schedparam attribute
+pthread_attr_setschedpolicy (3) - set/get scheduling policy attribute in thread attributes object
+pthread_attr_setschedpolicy (3posix) - set the schedpolicy attribute (REALTIME THREADS)
+pthread_attr_setscope (3) - set/get contention scope attribute in thread attributes object
+pthread_attr_setscope (3posix) - set the contentionscope attribute (REALTIME THREADS)
+pthread_attr_setstack (3) - set/get stack attributes in thread attributes object
+pthread_attr_setstack (3posix) - set the stack attribute
+pthread_attr_setstackaddr (3) - set/get stack address attribute in thread attributes object
+pthread_attr_setstacksize (3) - set/get stack size attribute in thread attributes object
+pthread_attr_setstacksize (3posix) - set the stacksize attribute
+pthread_barrier_destroy (3posix) - destroy and initialize a barrier object
+pthread_barrier_wait (3posix) - synchronize at a barrier
+pthread_barrierattr_destroy (3posix) - destroy and initialize the barrier attributes object
+pthread_barrierattr_getpshared (3posix) - get and set the process-shared attribute of the barrier attributes object
+pthread_barrierattr_init (3posix) - initialize the barrier attributes object
+pthread_barrierattr_setpshared (3posix) - set the process-shared attribute of the barrier attributes object
+pthread_cancel (3)   - send a cancellation request to a thread
+pthread_cancel (3posix) - cancel execution of a thread
+pthread_cleanup_pop (3) - push and pop thread cancellation clean-up handlers
+pthread_cleanup_pop (3posix) - establish cancellation handlers
+pthread_cleanup_pop_restore_np (3) - push and pop thread cancellation clean-up handlers while saving cancelability type
+pthread_cleanup_push (3) - push and pop thread cancellation clean-up handlers
+pthread_cleanup_push_defer_np (3) - push and pop thread cancellation clean-up handlers while saving cancelability type
+pthread_cond_broadcast (3posix) - broadcast or signal a condition
+pthread_cond_destroy (3posix) - destroy and initialize condition variables
+pthread_cond_signal (3posix) - signal a condition
+pthread_cond_timedwait (3posix) - wait on a condition
+pthread_condattr_destroy (3posix) - destroy and initialize the condition variable attributes object
+pthread_condattr_getclock (3posix) - get and set the clock selection condition variable attribute
+pthread_condattr_getpshared (3posix) - get and set the process-shared condition variable attributes
+pthread_condattr_init (3posix) - initialize the condition variable attributes object
+pthread_condattr_setclock (3posix) - set the clock selection condition variable attribute
+pthread_condattr_setpshared (3posix) - set the process-shared condition variable attribute
+pthread_create (3)   - create a new thread
+pthread_create (3posix) - thread creation
+pthread_detach (3)   - detach a thread
+pthread_detach (3posix) - detach a thread
+pthread_equal (3)    - compare thread IDs
+pthread_equal (3posix) - compare thread IDs
+pthread_exit (3)     - terminate calling thread
+pthread_exit (3posix) - thread termination
+pthread_getaffinity_np (3) - set/get CPU affinity of a thread
+pthread_getattr_default_np (3) - get or set default thread-creation attributes
+pthread_getattr_np (3) - get attributes of created thread
+pthread_getconcurrency (3) - set/get the concurrency level
+pthread_getconcurrency (3posix) - get and set the level of concurrency
+pthread_getcpuclockid (3) - retrieve ID of a thread's CPU time clock
+pthread_getcpuclockid (3posix) - access a thread CPU-time clock (ADVANCED REALTIME THREADS)
+pthread_getname_np (3) - set/get the name of a thread
+pthread_getschedparam (3) - set/get scheduling policy and parameters of a thread
+pthread_getschedparam (3posix) - dynamic thread scheduling parameters access (REALTIME THREADS)
+pthread_getspecific (3posix) - thread-specific data management
+pthread_join (3)     - join with a terminated thread
+pthread_join (3posix) - wait for thread termination
+pthread_key_create (3posix) - thread-specific data key creation
+pthread_key_delete (3posix) - thread-specific data key deletion
+pthread_kill (3)     - send a signal to a thread
+pthread_kill (3posix) - send a signal to a thread
+pthread_kill_other_threads_np (3) - terminate all other threads in process
+pthread_mutex_consistent (3) - make a robust mutex consistent
+pthread_mutex_consistent (3posix) - mark state protected by robust mutex as consistent
+pthread_mutex_consistent_np (3) - make a robust mutex consistent
+pthread_mutex_destroy (3posix) - destroy and initialize a mutex
+pthread_mutex_getprioceiling (3posix) - get and set the priority ceiling of a mutex (REALTIME THREADS)
+pthread_mutex_init (3posix) - destroy and initialize a mutex
+pthread_mutex_lock (3posix) - lock and unlock a mutex
+pthread_mutex_setprioceiling (3posix) - change the priority ceiling of a mutex (REALTIME THREADS)
+pthread_mutex_timedlock (3posix) - lock a mutex
+pthread_mutex_trylock (3posix) - lock and unlock a mutex
+pthread_mutexattr_destroy (3posix) - destroy and initialize the mutex attributes object
+pthread_mutexattr_getprioceiling (3posix) - get and set the prioceiling attribute of the mutex attributes object (REALTIME THREADS)
+pthread_mutexattr_getprotocol (3posix) - get and set the protocol attribute of the mutex attributes object (REALTIME THREADS)
+pthread_mutexattr_getpshared (3) - get/set process-shared mutex attribute
+pthread_mutexattr_getpshared (3posix) - get and set the process-shared attribute
+pthread_mutexattr_getrobust (3) - get and set the robustness attribute of a mutex attributes object
+pthread_mutexattr_getrobust (3posix) - get and set the mutex robust attribute
+pthread_mutexattr_getrobust_np (3) - get and set the robustness attribute of a mutex attributes object
+pthread_mutexattr_gettype (3posix) - get and set the mutex type attribute
+pthread_mutexattr_init (3posix) - initialize the mutex attributes object
+pthread_mutexattr_setprioceiling (3posix) - set the prioceiling attribute of the mutex attributes object (REALTIME THREADS)
+pthread_mutexattr_setprotocol (3posix) - set the protocol attribute of the mutex attributes object (REALTIME THREADS)
+pthread_mutexattr_setpshared (3) - get/set process-shared mutex attribute
+pthread_mutexattr_setpshared (3posix) - set the process-shared attribute
+pthread_mutexattr_setrobust (3) - get and set the robustness attribute of a mutex attributes object
+pthread_mutexattr_setrobust (3posix) - get and set the mutex robust attribute
+pthread_mutexattr_setrobust_np (3) - get and set the robustness attribute of a mutex attributes object
+pthread_mutexattr_settype (3posix) - set the mutex type attribute
+pthread_once (3posix) - dynamic package initialization
+pthread_rwlock_destroy (3posix) - destroy and initialize a read-write lock object
+pthread_rwlock_rdlock (3posix) - lock a read-write lock object for reading
+pthread_rwlock_timedrdlock (3posix) - lock a read-write lock for reading
+pthread_rwlock_timedwrlock (3posix) - lock a read-write lock for writing
+pthread_rwlock_tryrdlock (3posix) - lock a read-write lock object for reading
+pthread_rwlock_trywrlock (3posix) - lock a read-write lock object for writing
+pthread_rwlock_unlock (3posix) - unlock a read-write lock object
+pthread_rwlock_wrlock (3posix) - lock a read-write lock object for writing
+pthread_rwlockattr_destroy (3posix) - destroy and initialize the read-write lock attributes object
+pthread_rwlockattr_getkind_np (3) - set/get the read-write lock kind of the thread read-write lock attribute object
+pthread_rwlockattr_getpshared (3posix) - get and set the process-shared attribute of the read-write lock attributes object
+pthread_rwlockattr_init (3posix) - initialize the read-write lock attributes object
+pthread_rwlockattr_setkind_np (3) - set/get the read-write lock kind of the thread read-write lock attribute object
+pthread_rwlockattr_setpshared (3posix) - set the process-shared attribute of the read-write lock attributes object
+pthread_self (3)     - obtain ID of the calling thread
+pthread_self (3posix) - get the calling thread ID
+pthread_setaffinity_np (3) - set/get CPU affinity of a thread
+pthread_setattr_default_np (3) - get or set default thread-creation attributes
+pthread_setcancelstate (3) - set cancelability state and type
+pthread_setcancelstate (3posix) - set cancelability state
+pthread_setcanceltype (3) - set cancelability state and type
+pthread_setconcurrency (3) - set/get the concurrency level
+pthread_setconcurrency (3posix) - set the level of concurrency
+pthread_setname_np (3) - set/get the name of a thread
+pthread_setschedparam (3) - set/get scheduling policy and parameters of a thread
+pthread_setschedparam (3posix) - dynamic thread scheduling parameters access (REALTIME THREADS)
+pthread_setschedprio (3) - set scheduling priority of a thread
+pthread_setschedprio (3posix) - dynamic thread scheduling parameters access (REALTIME THREADS)
+pthread_setspecific (3posix) - thread-specific data management
+pthread_sigmask (3)  - examine and change mask of blocked signals
+pthread_sigmask (3posix) - examine and change blocked signals
+pthread_sigqueue (3) - queue a signal and data to a thread
+pthread_spin_destroy (3) - initialize or destroy a spin lock
+pthread_spin_destroy (3posix) - destroy or initialize a spin lock object
+pthread_spin_init (3) - initialize or destroy a spin lock
+pthread_spin_lock (3) - lock and unlock a spin lock
+pthread_spin_lock (3posix) - lock a spin lock object
+pthread_spin_trylock (3) - lock and unlock a spin lock
+pthread_spin_unlock (3) - lock and unlock a spin lock
+pthread_spin_unlock (3posix) - unlock a spin lock object
+pthread_testcancel (3) - request delivery of any pending cancellation request
+pthread_testcancel (3posix) - set cancelability state
+pthread_timedjoin_np (3) - try to join with a terminated thread
+pthread_tryjoin_np (3) - try to join with a terminated thread
+pthread_yield (3)    - yield the processor
+pthreads (7)         - POSIX threads
+
+b) 
+
+man -k syscall
+man 2 write
+
+
+
+
+EXERCISE 2:
+
+a)  "cat don\ quijote.txt | grep molino > aventuras.txt" o "grep molino  don\ quijote.txt > aventuras.txt"
+    Cat lee don quijote y grep lo recibe via pipeline y luego lo redirecciono a aventuras.txt. El segundo comando lo hace automáticamente y solo hay que redireccionar la salida.
+b)  ls | wc -l
+    ls imprime los archivos en lineas y solo tenemos hacer un pipeline al wc para que cuente lineas con "-l"
+c)  cat "lista de la compra Pepe.txt" "lista de la compra Elena.txt" | wc -l > "num compra.txt" 2>/dev/null
+
+d)  ps -A | awk '{print $1}' | uniq -c > hilos.txt
+    ps -A obtiene todos los pid de los hilos, con awk print obtenemos solo los pids y uniq -c los cuenta luego redireccionamos el output a hilos.txt

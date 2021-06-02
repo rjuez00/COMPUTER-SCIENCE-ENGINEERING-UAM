@@ -1,0 +1,27 @@
+{% extends 'core/base.html' %}
+{% load staticfiles %}
+
+{% block title_block %}
+    Apply Pair
+{% endblock %}
+
+{% block body_block %}
+    <h1>Apply Pair</h1>
+    {% if form != None %}
+        Select the second
+        <form method="post" action="{% url 'applypair' %}">
+        {% csrf_token %}
+            {{ form }}
+             <input type="submit" value="Apply Pair">
+        </form>
+    {% else %}
+            User has already selected a pair:
+        <ul>
+            <li>{{pair_applied.0.last_name}}, {{pair_applied.0.first_name}}</li>
+            <li>{{pair_applied.1.last_name}}, {{pair_applied.1.first_name}}</li>
+        </ul>
+    {% endif %}
+
+
+
+{% endblock %}

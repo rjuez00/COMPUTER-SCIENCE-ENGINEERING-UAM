@@ -1,0 +1,4 @@
+process: hacerlo un poco mas simple
+no confundir process y output
+revisar los no funcionales que estaban mal, para no repetir
+o si no son funciones específicas

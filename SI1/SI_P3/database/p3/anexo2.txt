@@ -1,0 +1,102 @@
+SIN INDEX:
+query1: 
+                           QUERY PLAN                            
+-----------------------------------------------------------------
+ Aggregate  (cost=3507.17..3507.18 rows=1 width=8)
+   ->  Seq Scan on orders  (cost=0.00..3504.90 rows=909 width=0)
+         Filter: (status IS NULL)
+(3 filas)
+
+
+
+query2:
+                           QUERY PLAN                            
+-----------------------------------------------------------------
+ Aggregate  (cost=3961.65..3961.66 rows=1 width=8)
+   ->  Seq Scan on orders  (cost=0.00..3959.38 rows=909 width=0)
+         Filter: ((status)::text = 'Shipped'::text)
+(3 filas)
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////
+CON INDEX:
+query1:
+                                    QUERY PLAN                                     
+-----------------------------------------------------------------------------------
+ Aggregate  (cost=1496.52..1496.53 rows=1 width=8)
+   ->  Bitmap Heap Scan on orders  (cost=19.46..1494.25 rows=909 width=0)
+         Recheck Cond: (status IS NULL)
+         ->  Bitmap Index Scan on ordersindex  (cost=0.00..19.24 rows=909 width=0)
+               Index Cond: (status IS NULL)
+(5 filas)
+
+
+query2:
+                                    QUERY PLAN                                     
+-----------------------------------------------------------------------------------
+ Aggregate  (cost=1498.79..1498.80 rows=1 width=8)
+   ->  Bitmap Heap Scan on orders  (cost=19.46..1496.52 rows=909 width=0)
+         Recheck Cond: ((status)::text = 'Shipped'::text)
+         ->  Bitmap Index Scan on ordersindex  (cost=0.00..19.24 rows=909 width=0)
+               Index Cond: ((status)::text = 'Shipped'::text)
+(5 filas)
+
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////
+ANALYZE:
+query1:
+                                     QUERY PLAN                                      
+-------------------------------------------------------------------------------------
+ Aggregate  (cost=7.28..7.29 rows=1 width=8)
+   ->  Index Only Scan using ordersindex on orders  (cost=0.42..7.28 rows=1 width=0)
+         Index Cond: (status IS NULL)
+(3 filas)
+
+query2:
+                                       QUERY PLAN                                       
+----------------------------------------------------------------------------------------
+ Finalize Aggregate  (cost=4210.49..4210.50 rows=1 width=8)
+   ->  Gather  (cost=4210.37..4210.48 rows=1 width=8)
+         Workers Planned: 1
+         ->  Partial Aggregate  (cost=3210.37..3210.38 rows=1 width=8)
+               ->  Parallel Seq Scan on orders  (cost=0.00..3023.69 rows=74673 width=0)
+                     Filter: ((status)::text = 'Shipped'::text)
+(6 filas)
+
+f)
+Como podemos observar el coste de la primera consulta ha bajado dramáticamente, al contrario de lo que ha ocurrido con la segunda,
+cuyo coste ha subido. Creemos que la segunda tarda más debido a que, tras haber ejecutado el analyze, el planificador de consultas considera
+más eficiente ejecutar la consulta en paralelo en vez que hacerlo usando los índices ya creados (como hace en la primera), y esto hace que el
+coste de crear los hilos paralelos y después juntarlos no compense debido a que el volumen de datos no es lo suficientemente grande.
+
+query3:
+                                      QUERY PLAN                                      
+--------------------------------------------------------------------------------------
+ Aggregate  (cost=2312.31..2312.32 rows=1 width=8)
+   ->  Bitmap Heap Scan on orders  (cost=355.71..2267.37 rows=17973 width=0)
+         Recheck Cond: ((status)::text = 'Paid'::text)
+         ->  Bitmap Index Scan on ordersindex  (cost=0.00..351.22 rows=17973 width=0)
+               Index Cond: ((status)::text = 'Paid'::text)
+(5 filas)
+
+query4:
+                                      QUERY PLAN                                      
+--------------------------------------------------------------------------------------
+ Aggregate  (cost=2936.65..2936.66 rows=1 width=8)
+   ->  Bitmap Heap Scan on orders  (cost=710.82..2846.84 rows=35922 width=0)
+         Recheck Cond: ((status)::text = 'Processed'::text)
+         ->  Bitmap Index Scan on ordersindex  (cost=0.00..701.83 rows=35922 width=0)
+               Index Cond: ((status)::text = 'Processed'::text)
+(5 filas)
+
+g)
+Estas dos consultas vuelven a utilizar un bitmap, es decir se aprovechan de los índices ya creados para buscar los elementos requeridos.
+Estas consultas son más costosas porque hacen un recheck antes de escanearlo, es decir actualizan el índice.
+
+Ayuda:
+El generador de estadísticas crea un fichero con los datos obtenidos de realizar las estadisticas que sirve
+al planificador de consultas para generar el plan de consulta más eficiente.
+
+Como hemos mencionado anteriormente, tras obtener las estadísiticas, el planificador de consultas tiene una idea más concisa de la organización
+de la BD, por ello adecua las consultas para que sean más eficientes (o lo intenta).
+

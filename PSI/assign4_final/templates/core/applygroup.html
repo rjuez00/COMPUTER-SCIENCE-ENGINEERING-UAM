@@ -1,0 +1,28 @@
+{% extends 'core/base.html' %}
+{% load staticfiles %}
+
+{% block title_block %}
+    Apply Group
+{% endblock %}
+
+{% block body_block %}
+    <h1>Apply Group</h1>
+    {% if alert %}
+        <h3>{{alert}}</h3>
+    {% else %}
+        {% if startDate %}
+            Group selection is not active, the form opens on {{startDate}}
+        {% else %}
+            {% if form %}
+                Select the group you want to join to
+                <form method="post" action="{% url 'applygroup' %}">
+                    {% csrf_token %}
+                    {{ form }}
+                    <input type="submit" value="Apply Group">
+                </form>
+            {% else %}
+                You're part of {{ groupName }} lab.
+            {% endif %}
+        {% endif %}
+    {% endif %}
+{% endblock %}

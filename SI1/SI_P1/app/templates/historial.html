@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+
+{% block title %}
+Carrito
+{% endblock %}
+
+{% block header %}
+{% endblock%}
+
+{% block content%}
+<div class="container">
+   <div id="historyheader">
+      <h1>Historial</h1>
+      <h2>Saldo: {{'%0.2f'| format(saldo|float)}} &euro;</h2>
+      <form method="post">
+         <button type="submit" class="as">Añadir Saldo</button>
+         <input id="cantidadsakdo" class="as" type="text" name="cantidadsaldo" pattern="^[1-9]\d*$"
+            placeholder="&euro;">
+      </form>
+   </div>
+
+   {% for pedido in pedidos['pedidos'] %}
+   <div class="item">
+      <img src={{ url_for('static', filename = pedido.pelicula.poster) }} class="imgdesplegable" alt="poster">
+      <div class="left price">{{pedido.precio}} &euro; x {{pedido.unidades}}</div>
+      <div class="left fecha">{{pedido.fecha}}</div>
+
+      <div class="infodesplegable">
+         <div class="info2"><b>Precio Actual:</b> {{pedido.pelicula.precio}} &euro;</div>
+         <div class="info2"><b>Director: </b>{{pedido.pelicula.director}}</div>
+         <div class="info2"><b>Categoria: </b>{{pedido.pelicula.categoria}}</div>
+      </div>
+   </div>
+   {% endfor %}
+
+</div>
+
+<script src={{ url_for('static', filename='js/carrito.js') }}></script>
+
+{% endblock%}

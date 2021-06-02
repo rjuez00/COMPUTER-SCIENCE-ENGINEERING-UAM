@@ -1,0 +1,9 @@
+si libreoffice falla
+
+1. eliminar todas las barras separadoras del dataset
+2. eliminar titulos
+3. eliminar barras
+4. eliminar dobles espacios
+
+5. recuerda hacer load con ""
+

@@ -1,0 +1,13 @@
+     89 10
+     84 9
+     99 8
+     96 7
+     99 6
+    122 5
+     92 4
+    106 3
+    110 2
+    103 1
+      1 Practice no 1, Section 1
+      1 Grupo: 2192
+      1 Done by: Jose Manuel Freire & Rodrigo Juez

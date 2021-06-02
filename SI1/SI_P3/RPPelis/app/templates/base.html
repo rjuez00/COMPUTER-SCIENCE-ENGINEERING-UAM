@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href={{ url_for('static', filename='css/general.css') }} />
+    <script src={{ url_for('static', filename='js/general.js') }}></script>
+    <script src={{ url_for('static', filename='js/jquery.min.js') }}></script>
+    <title>{% block title %} {% endblock %} - VideoClubRP</title>
+    {% block header %} {% endblock %}
+</head>
+
+<body>
+    <header>
+        <div id="usuarios">
+            Usuarios: X
+        </div>
+        <a href={{url_for('.index')}}>
+            <img src={{ url_for('static', filename='images/film.png') }} alt="Imagen Logo"/>
+        </a>
+        <a href={{url_for('.index')}}>
+            <img src={{ url_for('static', filename='images/rp.webp') }} alt="Imagen Logo"/>
+        </a>
+        <a href={{url_for('.carrito')}}>
+            <img id="cesta" src={{ url_for('static', filename='images/cesta.png') }} alt="Imagen Cesta"/>
+        </a>
+    </header>
+
+    <nav>
+        <ul>
+            <li>
+            {% if session.nombre %}
+            <button onclick="window.location.href='{{url_for('.historial')}}'">{{ session.nombre }}</button>
+            {% endif %}
+
+            <button onclick="window.location.href='{{url_for('.index')}}'">Inicio</button>
+            <button onclick="window.location.href='{{url_for('.topusa')}}'">Top USA</button>
+
+            {% if session.nombre %}
+            <button onclick="window.location.href='{{url_for('.logout')}}'">Cerrar Sesi&oacute;n</button>
+            {% else %}
+            <button onclick="window.location.href='{{url_for('.registro')}}'">Registrar</button>
+            <button onclick="window.location.href='{{url_for('.login')}}'">Iniciar Sesi&oacute;n</button>
+            {% endif %}
+        </li>
+        </ul>
+    </nav>
+
+    <div id="content">
+        {% block content%} {% endblock %}
+    </div>
+
+    <footer>
+        Autores: Pablo y Rodrigo<br>
+        <b>SISTEMAS DISTRIBUIDOS 1</b>
+    </footer>
+    <script>initURL("{{url_for('.users')}}");</script>
+</body>
+
+</html>

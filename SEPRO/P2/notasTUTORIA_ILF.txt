@@ -1,0 +1,3 @@
+FTR bases de datos PROPIA, pero se actualiza/lee desde fuera (a moodle le actualizan el calendario desde fuera).
+ILF bases de datos que usamos y mantenemos
+ELF bases de datos que utilizas pero no mantienes

@@ -1,0 +1,95 @@
+{
+   "peliculas":[
+      {
+         "id":1,
+         "titulo":"La guerra de las galaxias: Episodio 1-La amenaza fantasma",
+         "poster":"images/sw1.jpg",
+         "director":"George Lucas",
+         "precio":18.99,
+         "categoria":"Aventura",
+         "anno":1999,
+         "actores":[
+            {
+               "nombre":"Jake Lloyd",
+               "personaje":"Anakin Skywalker",
+               "foto":"images/anakin.jpg"
+            },
+            {
+               "nombre":"Ewan McGregor",
+               "personaje":"Obi-Wan Kenobi",
+               "foto":"images/kenobi.jpg"
+            }
+         ]
+      },
+
+
+      {
+        "id":2,
+        "titulo":"Blade Runner 2049", 
+        "poster":"images/br2049.jpg", 
+        "director":"Denis Villeneuve", 
+        "precio":18.99, 
+        "categoria":"Crimen", 
+        "anno":2017, 
+        "actores":[
+           {
+              "nombre":"Harrison Ford",
+              "personaje":"Deckard",
+              "foto":"images/deckard.jpg"
+           },
+           {
+              "nombre":"Ryan Gosling",
+              "personaje":"K",
+              "foto":"images/k.jpg"
+           },
+           {
+              "nombre":"Ana de Armas",
+              "personaje":"Joi",
+              "foto":"images/joi.jpg"
+           },
+           {
+              "nombre":"Jared Leto",
+              "personaje":"Wallace",
+              "foto":"images/wallace.jpg"
+           },
+           {
+              "nombre":"Sean Young",
+              "personaje":"Rachael",
+              "foto":"images/rachael.jpeg"
+           },
+           {
+            "nombre":"Sylvia Hoeks",
+            "personaje":"Luv",
+            "foto":"images/luv.jpg"
+            }
+        ]
+     },
+
+     {
+      "id":3,
+      "titulo":"Sicario", 
+      "poster":"images/sicario.jpg", 
+      "director":"Denis Villeneuve", 
+      "precio":5.99, 
+      "categoria":"Crimen", 
+      "anno":2015, 
+      "actores":[
+         {
+            "nombre":"Benicio del Toro",
+            "personaje":"Alejandro",
+            "foto":"images/alejandrosicario.jpeg"
+         },
+         {
+            "nombre":"Josh Brolin",
+            "personaje":"Matt",
+            "foto":"images/mattsicario.jpeg"
+         },
+         {
+            "nombre":"Emily Blunt",
+            "personaje":"Kate Macer",
+            "foto":"images/katemacersicario.jpeg"
+         }
+      ]
+   }
+   ]
+}

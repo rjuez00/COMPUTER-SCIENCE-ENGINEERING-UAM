@@ -1,0 +1,5 @@
+entre las tarjetas de caso de uso y de historias de usuario cual es la diferencia
+no estabamos seguros de como elegir el coste p-d o el tiempo
+diagrama de casos de uso comun? o cada historia de usuario tiene uno mas pequeño?
+son diagramas de uso pero en el sprintbacklog (y el product tambien) tenemos historias de usuario
+capturas del trello?

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+
+<html>
+    <head lang="en">
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>
+            {% block title_block %}
+                base
+            {% endblock %}
+        </title>
+        <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}"/>
+    </head>
+
+    <body>
+        <hr style="visibility:hidden;">
+        <div class = "container-fluid">
+        <!-- Common goes here -->
+        <div class="col-sm-3 col-lg-2">
+            <div class="container-fluid">
+                    {% if user.is_authenticated %}
+                    <nav class="navbar navbar-inverse navbar-fixed-side">
+                        <ul class="nav navbar-nav">
+                            <li class='active col-xs-12'><a href="{% url 'index' %}">Home</a></li>  
+                            <li class = 'col-xs-12'><a href="{% url 'convalidation' %}">Convalidation</a></li>  
+                            <li class = 'col-xs-12'><a href="{% url 'applypair' %}">Apply Pair</a></li> 
+                            <li class = 'col-xs-12'><a href="{% url 'applygroup' %}">Apply Group</a></li> 
+                            <li class = 'col-xs-12'><a href="{% url 'breakpair' %}">Break Pair</a></li> 
+                        </ul>
+                        <a href="{% url 'logout' %}"><button class="col-xs-12 btn btn-danger navbar-btn">Log Out</button></a>
+                    </nav>
+                    {% else %}
+                    <a href="{% url 'login' %}"><button class="btn btn-danger navbar-btn ">Log In</button></a>
+                    {% endif %}
+            </div>
+        </div>
+
+
+        <!-- Page specific content goes here -->
+        <div class="col-sm-9 col-lg-10">
+            <div class = "container">
+                {% block body_block %}
+                {% endblock %}
+            </div>
+        </div>
+        </div>
+        <hr>
+
+        
+        <footer class="panel-footer">
+            Jose Manuel Freire Porras(<a href="mailto:jose.freire@estudiante.uam.es">jose.freire@estudiante.uam.es</a>)<br>
+            Rodrigo Juez Hernández (<a href="mailto:rodrigo.juezh@estudiante.uam.es">rodrigo.juezh@estudiante.uam.es</a>)
+        </footer>
+    </body>
+</html>

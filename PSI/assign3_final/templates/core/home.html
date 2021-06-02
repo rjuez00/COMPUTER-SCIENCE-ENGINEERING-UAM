@@ -1,0 +1,52 @@
+{% extends 'core/base.html' %}
+{% load staticfiles %}
+
+{% block title_block %}
+    Home
+{% endblock %}
+  
+
+
+{% block body_block %}
+    {% if user.is_authenticated %}
+        <h1> Summary page for <b>{{ user.first_name }} {{ user.last_name }}</b>, (your theory group is {{ theoryGroup }}) </h1>
+        <h3>Convalidation</h3>
+        <div>
+            {% if convalidated %}
+                Your lab assigments are convalidated
+            {% else %}
+                Your lab assignments have NOT been convalidated. </br>
+                (If you wish to request a convalidation press the "convalidation" button.) 
+            {% endif %}
+        </div>
+
+        <h3>Pairs</h3>
+        {% for name1, name2, validated in pairs %}
+            {% if validated %}
+                You're part of the following pair:
+            {% else %}
+                This pair is in process of validation:
+            {% endif %}
+            <ul>
+                <li>{{name1}}</li>
+                <li>{{name2}}</li>
+            </ul>
+        {% endfor %}
+        <h3>Selected Group</h3>
+        {% if labGroup %}
+            Your lab group is: <b>{{labGroup}}</b>
+        {% else %}
+            You aren't a member of a lab group
+        {% endif %}
+    {% else %}
+        <ol>
+        Here you can:
+            <li>Login</li>
+            <li>Apply for convalidation if appropriate</li>
+            <li>Select partner</li>
+            <li>Select group</li>
+            
+        </ol>
+    {% endif %}
+{% endblock %}
+

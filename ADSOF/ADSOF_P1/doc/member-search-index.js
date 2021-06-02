@@ -1,0 +1,1 @@
+memberSearchIndex = [{"p":"<Unnamed>","c":"Primes","l":"getPrimes()"},{"p":"<Unnamed>","c":"Primes","l":"isPrime(int)"},{"p":"<Unnamed>","c":"Primes","l":"main(String[])","url":"main(java.lang.String[])"},{"p":"<Unnamed>","c":"Primes","l":"primeDivisors(int)"},{"p":"<Unnamed>","c":"Primes","l":"Primes()","url":"%3Cinit%3E()"},{"p":"<Unnamed>","c":"Primes","l":"toString()"}]

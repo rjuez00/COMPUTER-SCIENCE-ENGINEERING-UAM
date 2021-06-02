@@ -1,0 +1,16 @@
+coverage==4.5.3
+dj-database-url==0.5.0
+dj-static==0.0.6
+Django==2.2.5
+entrypoints==0.3
+flake8==3.7.7
+gunicorn==19.9.0
+mccabe==0.6.1
+Pillow==5.4.1
+psycopg2==2.8.3
+pycodestyle==2.5.0
+pyflakes==2.1.1
+pytz==2018.9
+sqlparse==0.3.1
+static3==0.7.0
+virtualenv==16.7.5

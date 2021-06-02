@@ -1,0 +1,9 @@
+El 7 de octubre se ha procedido ha:
+
+1) Actualizar el Makefile 
+   1.1) Las consultas 1 y 2 se han intercambiado para que sigan el mismo orden
+       que en el enunciado de la práctica
+   1.2) se ha añadido la opción allqueries la cual ejecuta todas las consultas
+
+2) Se ha subido una segunda instancia de la base de datos en la que hay películas extranjeras
+   y empate en el número de alquileres máximos.

@@ -1,0 +1,2 @@
+2:  The computer sometimes has more background processes than others, or maybe the temperature of the room varies 
+    and the CPU clock varies accordingly.

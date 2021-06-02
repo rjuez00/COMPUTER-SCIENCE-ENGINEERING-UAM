@@ -1,0 +1,18 @@
+{% extends 'core/base.html' %}
+{% load staticfiles %}
+
+{% block title_block %}
+    Convalidation
+{% endblock %}
+
+{% block body_block %}
+    <h1>Convalidation</h1>
+    <h3>Your grades are <b>{{theory}}</b> in theory and <b>{{lab}}</b> in lab</h3>
+    {% if granted %}
+        Congratulations! You satisfy requirements.
+    {% else %}
+        {{alert}}
+    {% endif %}
+
+
+{% endblock %}

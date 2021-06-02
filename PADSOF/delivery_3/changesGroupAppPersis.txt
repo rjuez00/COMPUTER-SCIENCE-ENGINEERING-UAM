@@ -1,0 +1,8 @@
+Group:
+Group ended up with much more load than we expected, most of it was due to hierarchy and moving methods from Application which was a common pattern repeated throughout all modules. Now the group controls the project that it supports and it has created, of course, it could be argued that it's repeated information but we considered that when handling a lot of projects and users it would slow down by a lot the application if we had to traverse arrays several times, this way retrieving projects supported and created projects is almost instantaneous. With a similar mindset, we implemented the citizens that are members of the group. All of the collections where we didn't need an order were implemented as HashSets to improve speed.
+
+Persistence:
+As it didn't appear in the class diagram before everything is new, it was created with a modular design in mind, if a new module, class or type of object is implemented in the application it will be easy to integrate into the serialization. The filename is constant for greater comfort.
+
+Application: It was stripped down to the minimum, only the login and logout are left. The methods registerUser() was moved to RegisteredCitizen, addGroup() to group, addProject() to project, and update() was scattered through the application mainly to notifications.
+Now application only saves if the admin is logged in or the RegisteredCitizen that is currently using the application.

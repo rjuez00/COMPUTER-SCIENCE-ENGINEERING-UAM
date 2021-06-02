@@ -1,0 +1,158 @@
+<diagram program="umletino" version="14.3.0"><zoom_level>10</zoom_level><element><id>UMLClass</id><coordinates><x>445</x><y>18</y><w>160</w><h>360</h></coordinates><panel_attributes>/Project/
+--
+- static threshold: Int
+- name: String
+- description: String
+- money: double
+- doc: Date
+- dls: Date
+
+- budgetIfAccepted: Long
+- reasonOfRejection: String
+--
+-updateDLS()
++popularityReport()
++sendNotifications()
++sendGov()
+-checkThreshold()
++setAccepted()
++setRejected(reason: String)
++checkOutofDate()
+
++checkGOVStatus()
+-getGOVBudget()
+-getGOVreason()
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>245</x><y>118</y><w>160</w><h>60</h></coordinates><panel_attributes>Infrastructure Project
+--
+- graphicalScheme: image
+--
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>245</x><y>28</y><w>160</w><h>70</h></coordinates><panel_attributes>Social Issues Project
+--
+- socialGroup: String
+- aim: bool
+--
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>45</x><y>218</y><w>380</w><h>130</h></coordinates><panel_attributes>Application
+--
+--
++registerUser(name: String, pwd: String, id:String)
++login(nameOrId: String, pwd: String)
++logout()
++addGroup(name: String, father:Group = null)
++addProject(name: String, type: boolean)
++update()</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>45</x><y>68</y><w>150</w><h>70</h></coordinates><panel_attributes>Neighborhood
+--
+- name: String
+--
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>35</x><y>100</y><w>60</w><h>140</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
+m2=1...*
+m2pos=0,20
+        </panel_attributes><additional_attributes>10;120;10;10</additional_attributes></element><element><id>UMLClass</id><coordinates><x>635</x><y>178</y><w>120</w><h>140</h></coordinates><panel_attributes>&lt;&lt;enum&gt;&gt;
+Status
+--
+- CREATED
+- ONGOING
+- OUTOFDATE
+- WAITING
+- APPROVED
+- REJECTED
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>595</x><y>310</y><w>90</w><h>80</h></coordinates><panel_attributes>lt=&lt;-
+-status</panel_attributes><additional_attributes>40;10;40;60;10;60</additional_attributes></element><element><id>Relation</id><coordinates><x>265</x><y>180</y><w>200</w><h>60</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-</panel_attributes><additional_attributes>10;40;10;10;180;10</additional_attributes></element><element><id>UMLClass</id><coordinates><x>445</x><y>780</y><w>200</w><h>120</h></coordinates><panel_attributes>Group
+--
+-name: String
+
+--
++addCitizen(cit: RegisteredCitizen)
++similarityReport(g: Group)
++removeCitizen(cit: RegisteredCitizen)
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>635</x><y>830</y><w>130</w><h>100</h></coordinates><panel_attributes>lt=-
+m1= father          0...1
+m2= children       0...*
+</panel_attributes><additional_attributes>10;70;90;70;90;10;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>555</x><y>650</y><w>90</w><h>150</h></coordinates><panel_attributes>lt=-
+m1=0..*
+m2=1
+ v
+represents</panel_attributes><additional_attributes>10;130;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>475</x><y>650</y><w>50</w><h>150</h></coordinates><panel_attributes>lt=-
+m1=0..*
+m2=0..*
+ v
+joins</panel_attributes><additional_attributes>10;130;10;10</additional_attributes></element><element><id>UMLClass</id><coordinates><x>415</x><y>470</y><w>210</w><h>190</h></coordinates><panel_attributes>Registered Citizen
+--
+-id: String
+--
++checkIfVoted(p: Project): bool
++addNotification(not: Notification)
++joinGroup(group: Group)
++leaveGroup(group: Group)
++vote(p: Project, g: Group = null)
++subscribe(p: Project)
++createGroup()
++requestSimilarityReport
++createProject(asRepresentative: bool)
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>245</x><y>338</y><w>50</w><h>120</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
+m2=0...*
+m2pos=0,15</panel_attributes><additional_attributes>10;10;10;100</additional_attributes></element><element><id>Relation</id><coordinates><x>205</x><y>338</y><w>260</w><h>580</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
+m2=0...*</panel_attributes><additional_attributes>10;10;10;550;240;550</additional_attributes></element><element><id>UMLClass</id><coordinates><x>235</x><y>440</y><w>110</w><h>120</h></coordinates><panel_attributes>/User/
+--
+-name: String
+-pwd: String
+-ban: Boolean
+--
+
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>255</x><y>670</y><w>190</w><h>90</h></coordinates><panel_attributes>Admin
+--
+
+--
++banUser(u: User)
++validate(p: Project, accept: bool)
++setTreshold(n: int)
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>335</x><y>508</y><w>100</w><h>30</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;10;80;10</additional_attributes></element><element><id>Relation</id><coordinates><x>275</x><y>548</y><w>30</w><h>140</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;10;10;120</additional_attributes></element><element><id>Relation</id><coordinates><x>490</x><y>368</y><w>60</w><h>120</h></coordinates><panel_attributes>lt=-
+m1=0...* 
+m1pos=-0,0
+m2=1...*
+m2pos=-0,0
+ ^
+votes</panel_attributes><additional_attributes>10;10;10;100</additional_attributes></element><element><id>Relation</id><coordinates><x>440</x><y>368</y><w>70</w><h>120</h></coordinates><panel_attributes>lt=-
+m1=0...*
+m1pos=0,0
+m2=1
+m2pos=0,0
+
+ ^
+creates
+</panel_attributes><additional_attributes>10;10;10;100</additional_attributes></element><element><id>UMLClass</id><coordinates><x>25</x><y>438</y><w>150</w><h>80</h></coordinates><panel_attributes>/Notification/
+--
+-read: bool
+--
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>65</x><y>598</y><w>120</w><h>80</h></coordinates><panel_attributes>ThresholdNotification
+--
+
+--
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>65</x><y>698</y><w>120</w><h>80</h></coordinates><panel_attributes>AcceptedNotification
+--
+
+--
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>90</x><y>508</y><w>30</w><h>110</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;10;10;90</additional_attributes></element><element><id>Relation</id><coordinates><x>20</x><y>508</y><w>60</w><h>250</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;10;10;230;40;230</additional_attributes></element><element><id>Relation</id><coordinates><x>140</x><y>408</y><w>320</w><h>80</h></coordinates><panel_attributes>lt=-
+m1=0 ... *
+m1pos=10,10
+m2=1</panel_attributes><additional_attributes>10;30;10;10;290;10;290;60</additional_attributes></element><element><id>Relation</id><coordinates><x>575</x><y>370</y><w>120</w><h>430</h></coordinates><panel_attributes>lt=-
+m1=0 ... *
+m2=0 ... *
+ ^
+groupsVoted</panel_attributes><additional_attributes>70;410;70;80;10;80;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>530</x><y>368</y><w>70</w><h>120</h></coordinates><panel_attributes>lt=-
+m1=0...* 
+m1pos=-0,0
+m2=0...*
+m2pos=-0,0
+ ^
+subbed</panel_attributes><additional_attributes>10;10;10;100</additional_attributes></element><element><id>UMLClass</id><coordinates><x>65</x><y>798</y><w>120</w><h>80</h></coordinates><panel_attributes>RejectedNotification
+--
+-motivation: String
+--
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>20</x><y>508</y><w>60</w><h>360</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;10;10;340;40;340</additional_attributes></element><element><id>Relation</id><coordinates><x>315</x><y>338</y><w>100</w><h>120</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
+
+-currentUser</panel_attributes><additional_attributes>10;10;10;100</additional_attributes></element><element><id>Relation</id><coordinates><x>370</x><y>40</y><w>90</w><h>30</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>70;10;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>390</x><y>150</y><w>70</w><h>30</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>50;10;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>125</x><y>0</y><w>340</w><h>90</h></coordinates><panel_attributes>lt=-
+m1=    neighborhoods\n  \n    1...*
+m1pos=-10,5
+m2= projects \n\n 0...*
+m2pos=15,-20
+</panel_attributes><additional_attributes>10;70;10;20;320;20</additional_attributes></element></diagram>

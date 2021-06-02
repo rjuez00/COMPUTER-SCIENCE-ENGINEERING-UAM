@@ -1,0 +1,311 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+dC:/Modeltech_pe_edu_10.4a/examples
+Ealumips
+Z0 w1554909398
+Z1 DPx4 ieee 16 std_logic_signed 0 22 C<aanc0R`<LWPSe[JYRP^3
+Z2 DPx4 ieee 15 std_logic_arith 0 22 [G314=:2zXJ`VORJe1J@Z1
+Z3 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z4 DPx4 ieee 14 std_logic_1164 0 22 eNV`TJ_GofJTzYa?f<@Oe1
+Z5 dC:/Users/sofia/Desktop/Practice 4/done/Microprocesor/Validation/madre bro
+Z6 8C:/Users/sofia/Desktop/Practice 4/done/Microprocesor/Validation/madre bro/ALUMIPS.vhd
+Z7 FC:/Users/sofia/Desktop/Practice 4/done/Microprocesor/Validation/madre bro/ALUMIPS.vhd
+l0
+L20
+VUKeOb]Q;ll3Me4d97kDaI1
+!s100 1KB8gONAKP;1c2GJ4;9<D3
+Z8 OP;C;10.4a;61
+32
+Z9 !s110 1556551206
+!i10b 1
+Z10 !s108 1556551206.000000
+Z11 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/sofia/Desktop/Practice 4/done/Microprocesor/Validation/madre bro/ALUMIPS.vhd|
+Z12 !s107 C:/Users/sofia/Desktop/Practice 4/done/Microprocesor/Validation/madre bro/ALUMIPS.vhd|
+!i113 1
+Z13 o-work work -2002 -explicit -O0
+Z14 tExplicit 1
+Apractica
+R1
+R2
+R3
+R4
+DEx4 work 7 alumips 0 22 UKeOb]Q;ll3Me4d97kDaI1
+l35
+L30
+VIZQ[DY@2d4j<88FfN@PH`1
+!s100 bgeYSGd7ZSi0gdNJ2f^Od3
+R8
+32
+R9
+!i10b 1
+R10
+R11
+R12
+!i113 1
+R13
+R14
+Ememdatavectores
+Z15 w1556096326
+R2
+Z16 DPx4 ieee 18 std_logic_unsigned 0 22 ;eZjO2D4ZDz<]0>8AL<ne1
+R3
+R4
+R5
+Z17 8C:/Users/sofia/Desktop/Practice 4/done/Microprocesor/Validation/madre bro/MemDataVectores.vhd
+Z18 FC:/Users/sofia/Desktop/Practice 4/done/Microprocesor/Validation/madre bro/MemDataVectores.vhd
+l0
+L21
+Vz;F?mX8MMDz`WW?ibhj7C0
+!s100 7YMOM?`Z^C@K?Qkn:m<C71
+R8
+32
+R9
+!i10b 1
+R10
+Z19 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/sofia/Desktop/Practice 4/done/Microprocesor/Validation/madre bro/MemDataVectores.vhd|
+Z20 !s107 C:/Users/sofia/Desktop/Practice 4/done/Microprocesor/Validation/madre bro/MemDataVectores.vhd|
+!i113 1
+R13
+R14
+Asimple
+R2
+R16
+R3
+R4
+DEx4 work 15 memdatavectores 0 22 z;F?mX8MMDz`WW?ibhj7C0
+l39
+L32
+VRe=oU0nX_GeHj?`GlPGgS2
+!s100 2KFZ<?o8kOnPhjX^GEA8K3
+R8
+32
+R9
+!i10b 1
+R10
+R19
+R20
+!i113 1
+R13
+R14
+Ememprogvectores
+Z21 w1556551187
+R16
+R2
+R3
+R4
+R5
+Z22 8C:/Users/sofia/Desktop/Practice 4/done/Microprocesor/Validation/madre bro/MemProgVectores.vhd
+Z23 FC:/Users/sofia/Desktop/Practice 4/done/Microprocesor/Validation/madre bro/MemProgVectores.vhd
+l0
+L20
+VDOn8Cz6?KUXZZHmJ7R7XO0
+!s100 M[XQ?J5Y@NzVg3k;ZK3Rz0
+R8
+32
+Z24 !s110 1556551207
+!i10b 1
+R10
+Z25 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/sofia/Desktop/Practice 4/done/Microprocesor/Validation/madre bro/MemProgVectores.vhd|
+Z26 !s107 C:/Users/sofia/Desktop/Practice 4/done/Microprocesor/Validation/madre bro/MemProgVectores.vhd|
+!i113 1
+R13
+R14
+Asimple
+R16
+R2
+R3
+R4
+DEx4 work 15 memprogvectores 0 22 DOn8Cz6?KUXZZHmJ7R7XO0
+l29
+L27
+Va9N;TBAV:0JNlU]X1fDOh1
+!s100 ^V1WOh?6cdd;aSKeZYBlL2
+R8
+32
+R24
+!i10b 1
+R10
+R25
+R26
+!i113 1
+R13
+R14
+Emicromips
+Z27 w1556094648
+R16
+R2
+R3
+R4
+R5
+Z28 8C:/Users/sofia/Desktop/Practice 4/done/Microprocesor/Validation/madre bro/MicroMIPS.vhd
+Z29 FC:/Users/sofia/Desktop/Practice 4/done/Microprocesor/Validation/madre bro/MicroMIPS.vhd
+l0
+L21
+VB>S<Ugc0LV^;K66XJdo7Z3
+!s100 V]OjM`z;6ZJSaMHEXZzIH2
+R8
+32
+R24
+!i10b 1
+Z30 !s108 1556551207.000000
+Z31 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/sofia/Desktop/Practice 4/done/Microprocesor/Validation/madre bro/MicroMIPS.vhd|
+Z32 !s107 C:/Users/sofia/Desktop/Practice 4/done/Microprocesor/Validation/madre bro/MicroMIPS.vhd|
+!i113 1
+R13
+R14
+Apractica
+R16
+R2
+R3
+R4
+DEx4 work 9 micromips 0 22 B>S<Ugc0LV^;K66XJdo7Z3
+l124
+L41
+VOYJG@?bonT;QTA=aTW`710
+!s100 Bf80Xz<H@PniKg[NA3>^M0
+R8
+32
+R24
+!i10b 1
+R30
+R31
+R32
+!i113 1
+R13
+R14
+Emicromipsvectorestb
+Z33 w1554854628
+R2
+R16
+R3
+R4
+R5
+Z34 8C:/Users/sofia/Desktop/Practice 4/done/Microprocesor/Validation/madre bro/MicroMIPSVectoresTb.vhd
+Z35 FC:/Users/sofia/Desktop/Practice 4/done/Microprocesor/Validation/madre bro/MicroMIPSVectoresTb.vhd
+l0
+L23
+Vnd9<E8Nk22=bEJ@Nh0]Sl3
+!s100 [<jRbG28Go28G927gD05A2
+R8
+32
+R24
+!i10b 1
+R30
+Z36 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/sofia/Desktop/Practice 4/done/Microprocesor/Validation/madre bro/MicroMIPSVectoresTb.vhd|
+Z37 !s107 C:/Users/sofia/Desktop/Practice 4/done/Microprocesor/Validation/madre bro/MicroMIPSVectoresTb.vhd|
+!i113 1
+R13
+R14
+Atest
+R2
+R16
+R3
+R4
+DEx4 work 19 micromipsvectorestb 0 22 nd9<E8Nk22=bEJ@Nh0]Sl3
+l81
+L26
+V1fUPC>i@L>>NQdM>0jQZd2
+!s100 dN9LGgo6:z[S>GHNR50Yj0
+R8
+32
+R24
+!i10b 1
+R30
+R36
+R37
+!i113 1
+R13
+R14
+Eregsmips
+Z38 w1554854630
+R2
+R16
+R3
+R4
+R5
+Z39 8C:/Users/sofia/Desktop/Practice 4/done/Microprocesor/Validation/madre bro/RegsMIPS.vhd
+Z40 FC:/Users/sofia/Desktop/Practice 4/done/Microprocesor/Validation/madre bro/RegsMIPS.vhd
+l0
+L20
+VN84S12k933X23e>>S9Tg<1
+!s100 LJQTSeORh221@Pl1ImODd3
+R8
+32
+R24
+!i10b 1
+R30
+Z41 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/sofia/Desktop/Practice 4/done/Microprocesor/Validation/madre bro/RegsMIPS.vhd|
+Z42 !s107 C:/Users/sofia/Desktop/Practice 4/done/Microprocesor/Validation/madre bro/RegsMIPS.vhd|
+!i113 1
+R13
+R14
+Apractica
+R2
+R16
+R3
+R4
+DEx4 work 8 regsmips 0 22 N84S12k933X23e>>S9Tg<1
+l46
+L34
+VY3>=ih2kTcVV23zZCUcQ@1
+!s100 KkKUn;imELf8`=f1GHD^b2
+R8
+32
+R24
+!i10b 1
+R30
+R41
+R42
+!i113 1
+R13
+R14
+Eunidadcontrol
+R38
+R1
+R2
+R3
+R4
+R5
+Z43 8C:/Users/sofia/Desktop/Practice 4/done/Microprocesor/Validation/madre bro/UnidadControl.vhd
+Z44 FC:/Users/sofia/Desktop/Practice 4/done/Microprocesor/Validation/madre bro/UnidadControl.vhd
+l0
+L6
+V;g60LMHo6ZSGP^;>RHbW43
+!s100 ^7aXIQX`jJX82gfi0KEUJ2
+R8
+32
+R24
+!i10b 1
+R30
+Z45 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/sofia/Desktop/Practice 4/done/Microprocesor/Validation/madre bro/UnidadControl.vhd|
+Z46 !s107 C:/Users/sofia/Desktop/Practice 4/done/Microprocesor/Validation/madre bro/UnidadControl.vhd|
+!i113 1
+R13
+R14
+Apractice4
+R1
+R2
+R3
+R4
+Z47 DEx4 work 13 unidadcontrol 0 22 ;g60LMHo6ZSGP^;>RHbW43
+l31
+L30
+Z48 V3GMf<M[8^^hIThSd@WLR02
+Z49 !s100 eEE>Xc29oG;I07I6;7JCM2
+R8
+32
+R24
+!i10b 1
+R30
+R45
+R46
+!i113 1
+R13
+R14

@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+
+{% block title %}
+Historial
+{% endblock %}
+
+{% block header %}
+{% endblock%}
+
+{% block content%}
+<div class="container">
+   <div id="historyheader">
+      <h1>Historial</h1>
+      <h2>Saldo: {{'%0.2f'| format(saldo|float)}} &euro;</h2>
+      <form method="post">
+         <button type="submit" class="as">Añadir Saldo</button>
+         <input id="cantidadsakdo" class="as" type="text" name="cantidadsaldo" pattern="^[1-9]\d*$"
+            placeholder="&euro;">
+      </form>
+   </div>
+</div>
+
+
+   <table class="styled-table">
+      <tr>
+         <th>Order Date</th>
+         <th>Price</th>
+         <th>Status</th>
+         <th>Films</th>
+     </tr>
+   {% for orderid, tupla in pedidos.items() %}
+   <tr class="orderrow">
+      <td>{{tupla[0]}}</td>
+      <td><b>{{tupla[1]}}</b></td>
+      <td>{{tupla[2]}}</td>
+      <td class="infodesplegable">
+         {% for peli in tupla[3] %}
+            <div><b>{{peli[0]}}</b> x {{peli[1]}}</div>
+         {% endfor %}
+      </td>
+   </tr>
+   {% endfor %}
+   </table>
+
+
+
+<script src={{ url_for('static', filename='js/historial.js') }}></script>
+
+{% endblock%}

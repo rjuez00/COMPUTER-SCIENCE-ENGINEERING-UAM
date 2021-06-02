@@ -1,0 +1,63 @@
+{% extends "base.html" %}
+
+{% block title %}
+Registro
+{% endblock %}
+
+{% block content%}
+
+<form method="post">
+    <div class="container">
+        <h1>Reg&iacute;strate</h1>
+        <hr>
+        <p>Rellena los campos siguientes para registrarte</p>
+        <hr>
+        {% if alerta %}
+        <div class="alerta">{{ alerta }}</div>
+        {% endif %}
+
+        <label for="nombre"><b>Nombre de Usuario</b></label>
+        <input type="text" pattern="^[a-zA-Z0-9]*$" placeholder="Escribe tu usuario" name="nombre" id="nombre"
+            title="Sin espacios ni caracteres especiales" required>
+        <hr>
+
+        <label for="email"><b>Correo</b></label>
+        <input type="email" placeholder="Escribe tu correo" name="email" id="email" required>
+        <hr>
+
+        <label for="psw1"><b>Contrase&ntilde;a</b></label>
+        <input type="password" style="margin:5px 0 0px 0;" placeholder="Escribe la Contrase&ntilde;a" name="psw1"
+            id="psw1" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,15}"
+            title="Debe contener una mayÃºscula, una minÃºscula, un nÃºmero y longitud de 8 a 15 caracteres" required>
+        <progress id="progress" value="0" max="100"></progress><br>
+
+        <label for="psw2"><b>Repite Contrase&ntilde;a</b></label>
+        <input type="password" placeholder="Repite la Contrase&ntilde;a" name="psw2" id="psw2"
+            pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,15}"
+            title="Debe contener una mayúscula, una minúscula, un número y longitud de 8 a 15 caracteres" required>
+        <hr>
+
+        <label for="ncredito"><b>N&uacute;mero de Tarjeta de Credito</b></label>
+        <input type="text" placeholder="Escribe tu N&uacute;mero de Tarjeta" name="ncredito" id="ncredito"
+            pattern=".{16,16}" title="Tarjeta tipo: 1111111111111111 (16 caracteres)" required>
+
+        <label><b>Caducidad</b></label>
+        <div>
+            <input type="month" name="fcredito" id="fcredito"
+                required>
+        </div>
+        </br>
+        </br>
+
+        <label><b>C&oacute;digo de Seguridad/CVV2</b></label>
+        <input type="text" placeholder="CVV2" pattern="^.{3,3}" name="cvv2" id="cvv2" required>
+        <hr>
+
+        <button type="submit" class="registerbtn">Registrar</button>
+    </div>
+
+
+</form>
+
+<script src={{ url_for('static', filename='js/formulario_registro.js') }}></script>
+{% endblock %}

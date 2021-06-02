@@ -1,0 +1,6 @@
+*.pyc
+staticfiles
+uploads
+.coverage
+__pycache__
+.idea

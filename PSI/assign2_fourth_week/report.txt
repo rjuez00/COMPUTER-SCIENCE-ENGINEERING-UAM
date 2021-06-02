@@ -1,0 +1,18 @@
+Name                                          Stmts   Miss  Cover   Missing
+---------------------------------------------------------------------------
+rango/__init__.py                                 0      0   100%
+rango/admin.py                                    8      0   100%
+rango/apps.py                                     3      3     0%   1-5
+rango/migrations/0001_initial.py                  6      0   100%
+rango/migrations/0002_auto_20201011_1801.py       4      0   100%
+rango/migrations/0003_auto_20201011_1808.py       4      0   100%
+rango/migrations/0004_category_slug.py            4      0   100%
+rango/migrations/0005_auto_20201012_1250.py       4      0   100%
+rango/migrations/0006_page_last_visit.py          5      0   100%
+rango/migrations/__init__.py                      0      0   100%
+rango/models.py                                  25      0   100%
+rango/urls.py                                     4      0   100%
+rango/views.py                                   40      3    92%   50-51, 59
+---------------------------------------------------------------------------
+TOTAL                                           107      6    94%
+

@@ -1,0 +1,30 @@
+{% extends 'core/base.html' %}
+{% load staticfiles %}
+
+{% block title_block %}
+    Apply Pair
+{% endblock %}
+
+{% block body_block %}
+    <h1>Break Pair</h1>
+    {% if alerta %}
+        <h3>{{alerta}}</h3>
+    {% endif %}
+    
+    {% if submited == True %}
+        You've already applied for a break pair, please wait.
+
+    {% elif form != None %}
+        Select the pair to be broken:
+        <form method="post" action="{% url 'breakpair' %}">
+        {% csrf_token %}
+            {{ form }}
+             <input type="submit" value="Break Pair">
+        </form>
+    {% else %}
+        You don't have any pair.
+    {% endif %}
+
+
+
+{% endblock %}

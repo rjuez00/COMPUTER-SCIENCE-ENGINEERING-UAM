@@ -1,0 +1,87 @@
+{% extends "base.html" %}
+
+{% block title %}
+Info {{movie.titulo}}
+{% endblock %}
+
+{% block header %}
+<link rel="stylesheet" href={{ url_for('static', filename='css/info_pelicula.css') }} type="text/css">
+{% endblock %}
+
+{% block content%}
+
+<div id="container" class="clear">
+
+   <!-- TITULO -->
+   <section id="slider" class="clear">
+      <figure>
+         <img src="{{ url_for('static', filename = movie.img) }}" onerror="this.onerror=null; this.src='{{ url_for('static', filename = 'images/film.jpg')}}'" alt="poster" class="posterinfo">
+         <figcaption>
+            <h1 id="movietitle">{{movie.title}}</h1><br>
+            {% for director in movie.director %}
+               <h2>{{director[0]}}</h2>
+            {% endfor %}
+            <br>
+            <form method="post">
+               <input type="hidden" name="id" value="{{ movie.id }}" />
+               <button type="submit">Comprar</button>
+            </form>
+            {% for mesg in get_flashed_messages() %}
+            <h3 class="flash-error-msg">{{ mesg }}</h3>
+            {% endfor %}
+
+
+         </figcaption>
+      </figure>
+         <div id="info">
+            <div id="annofilm">
+               {{movie.year}}
+            </div>
+
+            <div id="genrefilm">
+            {% for categoria in movie.genre %}
+               {{categoria[0]}}
+            {% endfor %}
+            </div>
+
+            <div id="pricefilm">
+               {{movie.price}} &euro;
+            </div>
+         </div>
+
+
+      
+
+
+   </section>
+
+
+
+   <!--ACTORES-->
+
+   <div>
+      <table class="styled-table">
+         <tr>
+            <th>Name</th>
+            <th>Character</th>
+            <th>Photo</th>
+        </tr>
+      {% for i in actors %}
+      <tr class="actorchunk">
+         <td><b>{{i.name}}</b></td>
+         <td>{{i.character}}</td>
+         <td><img src={{ url_for('static', filename = i.img) }} onerror="this.onerror=null; this.src='{{ url_for('static', filename = 'images/person.png')}}'" height="100" alt="actorpicture"> </td>
+     </tr>
+      {% endfor %}
+      </table>
+      
+
+
+   </div>
+
+
+</div>
+
+<script src={{ url_for('static', filename='js/info_pelicula.js') }}></script>
+
+{% endblock %}

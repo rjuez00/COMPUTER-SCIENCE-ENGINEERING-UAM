@@ -1,0 +1,31 @@
+{% extends 'core/base.html' %}
+{% load staticfiles %}
+
+{% block title_block %}
+    Login
+{% endblock %}
+
+{% block body_block %}
+    <h1>Please login</h1>
+    {% if user.is_authenticated %}
+        ALREADY LOGGED IN!
+    {% else %}
+        {% if alert %}
+            <p>{{alert}}</p>
+        {% endif %}
+        
+        <form id="login_form" method="post" action="{% url 'login' %}">
+        {% csrf_token %}
+    
+        Username: <input type="text" name="username" value="" size="50" />
+        <br />
+        
+        Password: <input type="password" name="password" value="" size="50" />
+        <br />
+    
+        <input type="submit" value="submit" />
+        </form>
+
+    {% endif %}
+    
+{% endblock %}

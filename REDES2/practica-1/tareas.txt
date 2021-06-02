@@ -1,0 +1,3 @@
+memoria
+
+implementar codigos 415 (MEDIA), 500(INTERNAL SERVER ERROR), 505(HTTP VERSION NOT SUPPORTED)

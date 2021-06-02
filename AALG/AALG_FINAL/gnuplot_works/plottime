@@ -1,0 +1,10 @@
+set xlabel "N"
+set ylabel "time"
+set title "title_clock"
+set grid
+set yrange [0:0.0015]
+
+
+
+
+plot "titleclock.txt" using 1:2 title "clock_time" with lines

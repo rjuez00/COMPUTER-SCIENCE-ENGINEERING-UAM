@@ -1,0 +1,8 @@
+*.pyc
+staticfiles
+uploads
+.coverage
+__pycache__
+.idea
+db.sqlite3
+migrations/

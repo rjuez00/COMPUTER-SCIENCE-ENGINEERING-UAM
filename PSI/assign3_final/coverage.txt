@@ -1,0 +1,42 @@
+Before doing our tests_additional.py
+Name                                         Stmts   Miss  Cover   Missing
+--------------------------------------------------------------------------
+core/__init__.py                                 0      0   100%
+core/admin.py                                   11      0   100%
+core/apps.py                                     3      3     0%   1-5
+core/management/commands/populate.py           153      3    98%   36-52
+core/migrations/0001_initial.py                  8      0   100%
+core/migrations/0002_auto_20201108_1603.py       4      0   100%
+core/migrations/__init__.py                      0      0   100%
+core/models.py                                  71      0   100%
+core/templatetags/__init__.py                    0      0   100%
+core/templatetags/core_template_tags.py          3      0   100%
+core/urls.py                                     4      0   100%
+core/views.py                                  143      6    96%   16, 29, 55, 84, 178, 191
+--------------------------------------------------------------------------
+TOTAL                                          400     12    97%
+
+
+
+
+
+
+After doing our tests_additional.py 
+The lines missing in apps.py are not ours and in populate.py are the parser which is not used in the tests
+
+Name                                         Stmts   Miss  Cover   Missing
+--------------------------------------------------------------------------
+core/__init__.py                                 0      0   100%
+core/admin.py                                   11      0   100%
+core/apps.py                                     3      3     0%   1-5
+core/management/commands/populate.py           153      3    98%   36-52
+core/migrations/0001_initial.py                  8      0   100%
+core/migrations/0002_auto_20201108_1603.py       4      0   100%
+core/migrations/__init__.py                      0      0   100%
+core/models.py                                  71      0   100%
+core/templatetags/__init__.py                    0      0   100%
+core/templatetags/core_template_tags.py          3      0   100%
+core/urls.py                                     4      0   100%
+core/views.py                                  143      0   100%
+--------------------------------------------------------------------------
+TOTAL                                          400      6    98%

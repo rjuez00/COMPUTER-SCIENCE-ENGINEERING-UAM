@@ -1,0 +1,71 @@
+{% extends "base.html" %}
+
+{% block title %}
+Index
+{% endblock %}
+
+
+{% block content %}
+<hr>
+<div id="novedades">
+    &Uacute;ltimas Novedades
+</div>
+
+<div class="slideshow-container">
+
+    {% for i in range(novedades|length) %}
+    <div class="mySlides fade" onclick="window.location = '{{url_for('.info_peli', film_id=novedades[i].id)}}'">
+        <img src={{ url_for('static', filename = novedades[i].poster)}} height=100 alt="Imagen Poster">
+    </div>
+    {% endfor %}
+
+    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+</div>
+
+<br>
+
+<div style="text-align:center">
+    {% for i in range(novedades|length) %}
+    <span class="dot" onclick="currentSlide({ i })"></span>
+    {% endfor %}
+</div>
+
+<hr>
+
+<div class="searchbox">
+    <form method="post">
+        <select id="desplegable" class="search" name="genero" id="genero">
+            <option value="todo">Todo</option>
+            {% for categoria, pelicula in categorias.items() %}
+            <option value={{categoria}}>
+                {{categoria.split("selected")[0]}}
+            </option>
+            {% endfor %}
+        </select>
+
+
+        <input id="searchinput" class="search" type="text" name="buscar" placeholder="{{ busqueda }}"><br />
+
+
+        <input id="searchsubmit" class="search" type="submit" id="buscar_icono" />
+
+    </form>
+</div>
+
+<div>
+
+    {% for item in movies %}
+    <div class="pelicula" onclick="window.location = '{{url_for('.info_peli', film_id=item.id)}}'">
+        <div class="info">G&eacute;nero: {{item.categoria}}<br>Director: {{ item.director }}<br></div>
+        <img src={{ url_for('static', filename = item.poster) }} alt="Imagen Poster">
+        <div>{{item.precio}} &euro;</div>
+    </div>
+    {% endfor %}
+
+</div>
+
+<script src={{ url_for('static', filename='js/pagina_inicio.js') }}></script>
+</body>
+{% endblock %}

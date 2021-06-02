@@ -1,0 +1,339 @@
+Turbo Assembler	 Version 2.0	    03/19/20 15:35:21	    Page 1
+wav.asm
+
+
+
+      1				     ; =====================================================
+      2				     ; =											    +
+      3				     =
+      4				     ; =				     WAVE LIBRARY				       =
+      5				     ; =											    +
+      6				     =
+      7				     ; =  Miguel A. Garcia - Miguel Company (Febr.2020)	       =
+      8				     ; =											    +
+      9				     =
+     10				     ; =====================================================
+     11
+     12	0000			     DATOS SEGMENT
+     13	0000  52 49 46 46		     ChunkID		     DB	     "RIFF"
+     14	0004  ????????			     ChunkSize		     DD	     ?
+     15	0008  57 41 56 45		     Format		     DB	     "WAVE"
+     16	000C  66 6D 74 20		     Subchunk1ID	     DB	     "fmt "
+     17	0010  00000010			     Subchunk1Size   DD	     16
+     18	0014  0001			     AudioFormat	     DW	     1
+     19	0016  0001			     NumChannels	     DW	     1
+     20	0018  ????????			     SampleRate		     DD	     ?
+     21	001C  ????????			     ByteRate		     DD	     ?
+     22	0020  0001			     BlockAlign		     DW	     1
+     23	0022  0008			     BitsPerSample   DW	     8
+     24	0024  64 61 74 61		     Subchunk2ID	     DB	     "data"
+     25	0028  ????????			     Subchunk2Size   DD	     ?
+     26	      =	002C			     SIZE_WAV_HEADER EQU $ - ChunkID
+     27	002C			     DATOS ENDS
+     28
+     29				     public fopen
+     30				     public fclose
+     31				     public fread
+     32				     public fwrite
+     33				     public Read_WAV
+     34				     public Write_WAV
+     35				     public Init_WAV_Header
+     36
+     37
+     38
+     39	0000			     CODE SEGMENT
+     40				       ASSUME CS:CODE, DS:DATOS
+     41
+     42				     ; ==========================================================
+     43				     ;					     fopen
+     44				     ; Input:
+     45				     ;	     DS:DX = Address of	ASCIIZ filename
+     46				     ; Output:
+     47				     ;	     CF	= Set on error
+     48				     ;	     AX	= File handle (CF=0) / Error code (CF=1)
+     49				     ; ==========================================================
+     50	0000  0000		     empty dw 0
+     51	0002			     fopen PROC	FAR
+     52	0002  B8 3D02			     mov ax, 3D02h   ; Read/Write mode
+     53	0005  CD 21			     int 21h
+     54	0007  73 09			     jnc fopen_ok
+     55
+     56					     ; File does not exist
+     57	0009  51			     push cx
+Turbo Assembler	 Version 2.0	    03/19/20 15:35:21	    Page 2
+wav.asm
+
+
+
+     58	000A  B9 0000			     mov cx, 0	     ; Attributes = archive
+     59	000D  B4 3C			     mov ah, 3Ch
+     60	000F  CD 21			     int 21h		     ; Create file
+     61	0011  59			     pop cx
+     62
+     63	0012			     fopen_ok:
+     64	0012  CB			     ret
+     65	0013			     fopen ENDP
+     66
+     67				     ; ==========================================================
+     68				     ;					     fclose
+     69				     ; Input:
+     70				     ;	     BX	= File handle
+     71				     ; Output:
+     72				     ;	     CF	= Set on error
+     73				     ;	     AX	= Error	code
+     74				     ; ==========================================================
+     75	0013			     fclose PROC FAR
+     76	0013  B4 3E			     mov ah, 3Eh
+     77	0015  CD 21			     int 21h
+     78	0017  CB			     ret
+     79	0018			     fclose ENDP
+     80
+     81				     ; ==========================================================
+     82				     ;					     fread
+     83				     ; Input:
+     84				     ;	     BX	= File handle
+     85				     ;	     CX	= Number of bytes to read
+     86				     ;	     DS:DX = Address of	buffer
+     87				     ; Output:
+     88				     ;	     CF	= Set on error
+     89				     ;	     AX	= Number of bytes read (CF=0) /	Error code (CF=1)
+     90				     ; ==========================================================
+     91	0018			     fread PROC	FAR
+     92	0018  B4 3F			     mov ah, 3Fh
+     93	001A  CD 21			     int 21h
+     94	001C  CB			     ret
+     95	001D			     fread ENDP
+     96
+     97				     ; ==========================================================
+     98				     ;					     fwrite
+     99				     ; Input:
+    100				     ;	     BX	= File handle
+    101				     ;	     CX	= Number of bytes to write
+    102				     ;	     DS:DX = Address of	buffer
+    103				     ; Output:
+    104				     ;	     CF	= Set on error
+    105				     ;	     AX	= Number of bytes written (CF=0) / Error code (CF=1)
+    106				     ; ==========================================================
+    107	001D			     fwrite PROC FAR
+    108	001D  B4 40			     mov ah, 40h
+    109	001F  CD 21			     int 21h
+    110	0021  CB			     ret
+    111	0022			     fwrite ENDP
+    112
+    113				     ; ==========================================================
+    114				     ;					     Transform_Chunk
+Turbo Assembler	 Version 2.0	    03/19/20 15:35:21	    Page 3
+wav.asm
+
+
+
+    115				     ; Description:
+    116				     ;	 Transform signed bytes	of given data chunk from two's
+    117				     ;	 complement to offset binary or	vice versa by flipping
+    118				     ;	 the sign bit.
+    119				     ; Input:
+    120				     ;	     DS:DI = Address of	WAV data chunk
+    121				     ;	 AX = Size in bytes of WAV data	chunk
+    122				     ; ==========================================================
+    123	0022			     Transform_Chunk PROC FAR
+    124	0022  50 57			     push ax di
+    125	0024			     convert_loop:
+    126	0024  80 35 80			     xor BYTE PTR ds:[di], 80h
+    127	0027  47			     inc di
+    128	0028  48			     dec ax
+    129	0029  75 F9			     jnz convert_loop
+    130	002B  5F 58			     pop di ax
+    131	002D  CB			     ret
+    132	002E			     Transform_Chunk ENDP
+    133
+    134
+    135				     ; ==========================================================
+    136				     ;					     Read_WAV_Header
+    137				     ; Input:
+    138				     ;	     BX	= File handle
+    139				     ; Output:
+    140				     ;	     CF	= Set on error
+    141				     ;	     AX	= Number of bytes read (CF=0) /	Error code (CF=1)
+    142				     ; ==========================================================
+    143	002E			     Read_WAV_Header PROC FAR
+    144	002E  51 52			     push cx dx
+    145	0030  B9 002C			     mov cx, SIZE_WAV_HEADER
+    146	0033  BA 0000r			     mov dx, OFFSET ChunkID
+    147	0036  0E E8 FFDE		     call fread
+    148	003A  5A 59			     pop dx cx
+    149	003C  CB			     ret
+    150	003D			     Read_WAV_Header ENDP
+    151
+    152				     ; ==========================================================
+    153				     ;					     Write_WAV_Header
+    154				     ; Input:
+    155				     ;	     BX	= File handle
+    156				     ; Output:
+    157				     ;	     CF	= Set on error
+    158				     ;	     AX	= Number of bytes written (CF=0) / Error code (CF=1)
+    159				     ; ==========================================================
+    160	003D			     Write_WAV_Header PROC FAR
+    161	003D  51 52			     push cx dx
+    162	003F  B9 002C			     mov cx, SIZE_WAV_HEADER
+    163	0042  BA 0000r			     mov dx, OFFSET ChunkID
+    164	0045  0E E8 FFD4		     call fwrite
+    165	0049  5A 59			     pop dx cx
+    166	004B  CB			     ret
+    167	004C			     Write_WAV_Header ENDP
+    168
+    169				     ; ==========================================================
+    170				     ;					     Read_WAV
+    171				     ; Input:
+Turbo Assembler	 Version 2.0	    03/19/20 15:35:21	    Page 4
+wav.asm
+
+
+
+    172				     ;	     BX	= File handle
+    173				     ;	     DS:DI = Address of	WAV data chunk
+    174				     ; Output:
+    175				     ;	     CF	= Set on error
+    176				     ;	     AX	= Number of data bytes read (CF=0) / Error code	(CF=1)
+    177				     ; ==========================================================
+    178	004C			     Read_WAV PROC FAR
+    179	004C  51 52 1E			     push cx dx	ds
+    180	004F  B9 0000s			     mov cx, DATOS
+    181	0052  8E D9			     mov ds, cx
+    182	0054  0E E8 FFD6		     call Read_WAV_Header
+    183	0058  8B 0E 0028r		     mov cx, WORD PTR Subchunk2Size  ; cx == Subchunk2Size
+    184	005C  1F			     pop ds
+    185	005D  72 0D			     jc	error1
+    186	005F  8B D7			     mov dx, di						     ; ds:dx ==	Address	of data	chunk
+    187	0061  0E E8 FFB3		     call fread
+    188	0065  72 05			     jc	error1
+    189	0067  0E E8 FFB7		     call Transform_Chunk		     ; Convert from offset binary to two's complement
+    190	006B  F8			     clc							     ; Carry = 0 (no error)
+    191	006C			     error1:
+    192	006C  5A 59			     pop dx cx
+    193	006E  CB			     ret
+    194	006F			     Read_WAV ENDP
+    195
+    196
+    197				     ; ==========================================================
+    198				     ;					     Write_WAV
+    199				     ; Input:
+    200				     ;	     BX	= File handle
+    201				     ;	     DS:DI = Address of	WAV data chunk
+    202				     ; Output:
+    203				     ;	     CF	= Set on error
+    204				     ;	     AX	= Number of data bytes written (CF=0) /	Error code (CF=1)
+    205				     ; ==========================================================
+    206	006F			     Write_WAV PROC FAR
+    207	006F  51 52 1E			     push cx dx	ds
+    208	0072  B9 0000s			     mov cx, DATOS
+    209	0075  8E D9			     mov ds, cx
+    210	0077  0E E8 FFC2		     call Write_WAV_Header
+    211	007B  8B 0E 0028r		     mov cx, WORD PTR Subchunk2Size  ; cx == Subchunk2Size
+    212	007F  1F			     pop ds
+    213	0080  72 21			     jc	end2
+    214	0082  8B C1			 mov ax, cx
+    215	0084  0E E8 FF9A		 call Transform_Chunk			     ; Convert from two's complement to	offset binary
+    216	0088  8B D7			     mov dx, di						     ; ds:dx ==	Address	of data	chunk
+    217	008A  0E E8 FF8F		     call fwrite
+    218	008E  72 08			     jc	error2
+    219	0090  0E E8 FF8E		 call Transform_Chunk			     ; (no error) Convert from offset binary to	    +
+    220				     two's complement
+    221	0094  F8			     clc							     ; Carry = 0 (no error)
+    222	0095  EB 0C 90			     jmp end2
+    223	0098			     error2:
+    224	0098  8B D0			 mov dx, ax					     ; dx = error code
+    225	009A  8B C1			     mov ax, cx						     ; ax = Subchunk2Size
+    226	009C  0E E8 FF82		     call Transform_Chunk		     ; (error) Convert from offset binary to two's  +
+    227				     complement
+    228	00A0  8B C2			     mov ax, dx						     ; ax = error code
+Turbo Assembler	 Version 2.0	    03/19/20 15:35:21	    Page 5
+wav.asm
+
+
+
+    229	00A2  F9			     stc							     ; CF = 1
+    230	00A3			     end2:
+    231	00A3  5A 59			     pop dx cx
+    232	00A5  CB			     ret
+    233	00A6			     Write_WAV ENDP
+    234
+    235
+    236				     ; ==========================================================
+    237				     ;					     Init_WAV_Header
+    238				     ; Input:
+    239				     ;	     DX	= Sample rate
+    240				     ;	     CX	= Number of samples
+    241				     ; ==========================================================
+    242	00A6			     Init_WAV_Header PROC FAR
+    243	00A6  50 1E			     push ax ds
+    244	00A8  B8 0000s			     mov ax, DATOS
+    245	00AB  8E D8			     mov ds, ax
+    246	00AD  83 C1 24			     add cx, 36
+    247	00B0  89 0E 0004r		     mov WORD PTR ChunkSize, cx		     ; header->ChunkSize = 36 +	numsamples
+    248	00B4  C7 06 0006r 0000		     mov WORD PTR ChunkSize[2],	0
+    249	00BA  83 E9 24			     sub cx, 36
+    250	00BD  89 16 0018r		     mov WORD PTR SampleRate, dx	     ; header->SampleRate = sample rate
+    251	00C1  C7 06 001Ar 0000		     mov WORD PTR SampleRate[2], 0
+    252	00C7  89 16 001Cr		     mov WORD PTR ByteRate, dx		     ; header->ByteRate	= sample rate
+    253	00CB  C7 06 001Er 0000		     mov WORD PTR ByteRate[2], 0
+    254	00D1  89 0E 0028r		     mov WORD PTR Subchunk2Size, cx	     ; header->	Subchunk2Size =	numsamples
+    255	00D5  C7 06 002Ar 0000		     mov WORD PTR Subchunk2Size[2], 0
+    256	00DB  1F 58			     pop ds ax
+    257	00DD  CB			     ret
+    258	00DE			     Init_WAV_Header ENDP
+    259
+    260
+    261	00DE			     CODE ENDS
+    262				     END
+Turbo Assembler	 Version 2.0	    03/19/20 15:35:21	    Page 6
+Symbol Table
+
+
+
+
+Symbol Name			  Type	 Value
+
+??date				  Text	 "03/19/20"
+??filename			  Text	 "wav	  "
+??time				  Text	 "15:35:21"
+??version			  Number 0200
+@Cpu				  Text	 0101H
+@FileName			  Text	 wav
+@WordSize			  Text	 2
+@curseg				  Text	 CODE
+AudioFormat			  Word	 DATOS:0014
+BitsPerSample			  Word	 DATOS:0022
+BlockAlign			  Word	 DATOS:0020
+ByteRate			  Dword	 DATOS:001C
+ChunkID				  Byte	 DATOS:0000
+ChunkSize			  Dword	 DATOS:0004
+Format				  Byte	 DATOS:0008
+Init_WAV_Header			  Far	 CODE:00A6
+NumChannels			  Word	 DATOS:0016
+Read_WAV			  Far	 CODE:004C
+Read_WAV_Header			  Far	 CODE:002E
+SIZE_WAV_HEADER			  Number 002C
+SampleRate			  Dword	 DATOS:0018
+Subchunk1ID			  Byte	 DATOS:000C
+Subchunk1Size			  Dword	 DATOS:0010
+Subchunk2ID			  Byte	 DATOS:0024
+Subchunk2Size			  Dword	 DATOS:0028
+Transform_Chunk			  Far	 CODE:0022
+Write_WAV			  Far	 CODE:006F
+Write_WAV_Header		  Far	 CODE:003D
+convert_loop			  Near	 CODE:0024
+empty				  Word	 CODE:0000
+end2				  Near	 CODE:00A3
+error1				  Near	 CODE:006C
+error2				  Near	 CODE:0098
+fclose				  Far	 CODE:0013
+fopen				  Far	 CODE:0002
+fopen_ok			  Near	 CODE:0012
+fread				  Far	 CODE:0018
+fwrite				  Far	 CODE:001D
+
+Groups & Segments		  Bit Size Align  Combine Class
+
+CODE				  16  00DE Para	  none
+DATOS				  16  002C Para	  none
+

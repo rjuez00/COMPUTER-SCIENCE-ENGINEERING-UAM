@@ -1,0 +1,81 @@
+{% extends "base.html" %}
+
+{% block title %}
+Index
+{% endblock %}
+
+
+{% block content %}
+<hr>
+<div id="novedades">
+    Top Ventas
+</div>
+
+<div class="slideshow-container">
+
+    {% for i in novedades %}
+    <div class="mySlides fade" onclick="window.location = '{{url_for('.info_peli', film_id=i.id)}}'">
+        <div class="blocknovedades">
+            <div class="infonovedades">Año: {{i.año}}<br>Ventas: {{ i.ventas }}<br></div>
+            <img src={{ url_for('static', filename = i.img)}} onerror="this.onerror=null; this.src='{{ url_for('static', filename = 'images/film.jpg')}}'" height=100 alt="Imagen {{i.pelicula}}">
+        </div>
+    
+    </div>
+    {% endfor %}
+
+    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+</div>
+
+<br>
+
+<div style="text-align:center">
+    {% for i in range(novedades|length) %}
+    <span class="dot" onclick="currentSlide({ i })"></span>
+    {% endfor %}
+</div>
+
+<hr>
+
+<div class="searchbox">
+    <form method="post">
+        <select id="desplegable" class="search" name="genero" id="genero">
+            <option value="todo">Todo</option>
+            {% for category in categorias %}
+            <option value={{category.id}}>
+                {{category.name}}
+            </option>
+            {% endfor %}
+        </select>
+
+
+        <input id="searchinput" class="search" type="text" name="buscar" placeholder="{{ busqueda }}"><br />
+
+
+        <input id="searchsubmit" class="search" type="submit" id="buscar_icono" />
+
+    </form>
+</div>
+
+<div>
+
+    {% for peli in movies %}
+    <div class="pelicula" onclick="window.location = '{{url_for('.info_peli', film_id=peli.id)}}'">
+        <div class="info">
+            G&eacute;neros: <br>
+            {% for genre in peli.genres %}
+                {{genre}},
+            {% endfor %}
+            
+        </div>
+        <img src={{ url_for('static', filename=peli.img) }} onerror="this.onerror=null; this.src='{{ url_for('static', filename = 'images/film.jpg')}}'" alt="">        
+        <div>{{peli.title}}</div>
+    </div>
+    {% endfor %}
+
+</div>
+
+<script src={{ url_for('static', filename='js/pagina_inicio.js') }}></script>
+</body>
+{% endblock %}

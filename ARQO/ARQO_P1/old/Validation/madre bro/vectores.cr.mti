@@ -1,0 +1,71 @@
+{C:/Users/sofia/Desktop/Practice 4/done/Microprocesor/Validation/madre bro/ALUMIPS.vhd} {1 {vcom -work work -2002 -explicit -stats=none {C:/Users/sofia/Desktop/Practice 4/done/Microprocesor/Validation/madre bro/ALUMIPS.vhd}
+Model Technology ModelSim PE Student Edition vcom 10.4a Compiler 2015.03 Apr  7 2015
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package std_logic_arith
+-- Loading package STD_LOGIC_SIGNED
+-- Compiling entity ALUMIPS
+-- Compiling architecture Practica of ALUMIPS
+
+} {} {}} {C:/Users/sofia/Desktop/Practice 4/done/Microprocesor/Validation/madre bro/MicroMIPS.vhd} {1 {vcom -work work -2002 -explicit -stats=none {C:/Users/sofia/Desktop/Practice 4/done/Microprocesor/Validation/madre bro/MicroMIPS.vhd}
+Model Technology ModelSim PE Student Edition vcom 10.4a Compiler 2015.03 Apr  7 2015
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package std_logic_arith
+-- Loading package STD_LOGIC_UNSIGNED
+-- Compiling entity MicroMIPS
+-- Compiling architecture Practica of MicroMIPS
+
+} {} {}} {C:/Users/sofia/Desktop/Practice 4/done/Microprocesor/Validation/madre bro/MemDataVectores.vhd} {1 {vcom -work work -2002 -explicit -stats=none {C:/Users/sofia/Desktop/Practice 4/done/Microprocesor/Validation/madre bro/MemDataVectores.vhd}
+Model Technology ModelSim PE Student Edition vcom 10.4a Compiler 2015.03 Apr  7 2015
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package std_logic_arith
+-- Loading package STD_LOGIC_UNSIGNED
+-- Compiling entity MemDataVectores
+-- Compiling architecture Simple of MemDataVectores
+
+} {} {}} {C:/Users/sofia/Desktop/Practice 4/done/Microprocesor/Validation/madre bro/MicroMIPSVectoresTb.vhd} {1 {vcom -work work -2002 -explicit -stats=none {C:/Users/sofia/Desktop/Practice 4/done/Microprocesor/Validation/madre bro/MicroMIPSVectoresTb.vhd}
+Model Technology ModelSim PE Student Edition vcom 10.4a Compiler 2015.03 Apr  7 2015
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package std_logic_arith
+-- Loading package STD_LOGIC_UNSIGNED
+-- Compiling entity MicroMIPSVectoresTb
+-- Compiling architecture Test of MicroMIPSVectoresTb
+
+} {} {}} {C:/Users/sofia/Desktop/Practice 4/done/Microprocesor/Validation/madre bro/MemProgVectores.vhd} {1 {vcom -work work -2002 -explicit -stats=none {C:/Users/sofia/Desktop/Practice 4/done/Microprocesor/Validation/madre bro/MemProgVectores.vhd}
+Model Technology ModelSim PE Student Edition vcom 10.4a Compiler 2015.03 Apr  7 2015
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package std_logic_arith
+-- Loading package STD_LOGIC_UNSIGNED
+-- Compiling entity MemProgVectores
+-- Compiling architecture Simple of MemProgVectores
+
+} {} {}} {C:/Users/sofia/Desktop/Practice 4/done/Microprocesor/Validation/madre bro/RegsMIPS.vhd} {1 {vcom -work work -2002 -explicit -stats=none {C:/Users/sofia/Desktop/Practice 4/done/Microprocesor/Validation/madre bro/RegsMIPS.vhd}
+Model Technology ModelSim PE Student Edition vcom 10.4a Compiler 2015.03 Apr  7 2015
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package std_logic_arith
+-- Loading package STD_LOGIC_UNSIGNED
+-- Compiling entity RegsMIPS
+-- Compiling architecture Practica of RegsMIPS
+
+} {} {}} {C:/Users/sofia/Desktop/Practice 4/done/Microprocesor/Validation/madre bro/UnidadControl.vhd} {1 {vcom -work work -2002 -explicit -stats=none {C:/Users/sofia/Desktop/Practice 4/done/Microprocesor/Validation/madre bro/UnidadControl.vhd}
+Model Technology ModelSim PE Student Edition vcom 10.4a Compiler 2015.03 Apr  7 2015
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package std_logic_arith
+-- Loading package STD_LOGIC_SIGNED
+-- Compiling entity UnidadControl
+-- Compiling architecture practice4 of UnidadControl
+
+} {} {}}

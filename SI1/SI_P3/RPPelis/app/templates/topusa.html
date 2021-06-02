@@ -1,0 +1,176 @@
+{% extends "base.html" %}
+
+{% block title %}
+Top USA
+{% endblock %}
+
+{% block header %}
+{% endblock%}
+
+{% block content%}
+<div class="container">
+   <div id="historyheader">
+      <h1>Top USA</h1>
+   </div>
+</div>
+
+   <h2>Comedias del 1997 con "Life"</h2>
+   <table class="styled-table">
+      <tr>
+         <th>Título</th>
+         <th>Genero</th>
+         <th>Año</th>
+         <th>Directores</th>
+         <th>Actores</th>
+         <th>Películas más relacionadas</th>
+         <th>Películas relacionadas</th>
+
+
+
+     </tr>
+   {% for peli in life %}
+   <tr class="orderrow">
+      <td>{{peli.title}}</td>
+      <td>
+         {% for item in peli.genres %}
+            {{item}}
+         {% endfor %}
+      </td>
+      <td>{{peli.year}}</td>
+      <td class="infodesplegable">
+         {% for item in peli.directors %}
+            {{item}}
+         {% endfor %}
+      </td>
+      <td class="infodesplegable">
+         {% for item in peli.actors %}
+            {{item}}
+         {% endfor %}
+      </td>
+      <td class="infodesplegable">
+         <ol>
+         {% for item in peli.most_related_movies %}
+            <li>{{item.title}}: {{item.year}}</li>
+         {% endfor %}
+         </ol> 
+      </td>
+      <td class="infodesplegable">
+         <ol>
+            {% for item in peli.related_movies %}
+               <li>{{item.title}}: {{item.year}}</li>
+            {% endfor %}
+            </ol> 
+      </td>
+   </tr>
+   {% endfor %}
+   </table>
+
+
+
+   <h2>Películas de los 90 por Woody Allen</h2>
+   <table class="styled-table">
+      <tr>
+         <th>Título</th>
+         <th>Genero</th>
+         <th>Año</th>
+         <th>Directores</th>
+         <th>Actores</th>
+         <th>Películas más relacionadas</th>
+         <th>Películas relacionadas</th>
+
+
+
+     </tr>
+   {% for peli in noventas %}
+   <tr class="orderrow">
+      <td>{{peli.title}}</td>
+      <td>
+         {% for item in peli.genres %}
+            {{item}}
+         {% endfor %}
+      </td>
+      <td>{{peli.year}}</td>
+      <td class="infodesplegable">
+         {% for item in peli.directors %}
+            {{item}}
+         {% endfor %}
+      </td>
+      <td class="infodesplegable">
+         {% for item in peli.actors %}
+            {{item}}
+         {% endfor %}
+      </td>
+      <td class="infodesplegable">
+         <ol>
+         {% for item in peli.most_related_movies %}
+            <li>{{item.title}}: {{item.year}}</li>
+         {% endfor %}
+         </ol> 
+      </td>
+      <td class="infodesplegable">
+         <ol>
+            {% for item in peli.related_movies %}
+               <li>{{item.title}}: {{item.year}}</li>
+            {% endfor %}
+            </ol> 
+      </td>
+   </tr>
+   {% endfor %}
+   </table>
+
+
+
+   <h2>Películas por Jim Parsons y Johnny Galecki</h2>
+   <table class="styled-table">
+      <tr>
+         <th>Título</th>
+         <th>Genero</th>
+         <th>Año</th>
+         <th>Directores</th>
+         <th>Actores</th>
+         <th>Películas más relacionadas</th>
+         <th>Películas relacionadas</th>
+
+
+
+     </tr>
+   {% for peli in jim_jhon %}
+   <tr class="orderrow">
+      <td>{{peli.title}}</td>
+      <td>
+         {% for item in peli.genres %}
+            {{item}}
+         {% endfor %}
+      </td>
+      <td>{{peli.year}}</td>
+      <td class="infodesplegable">
+         {% for item in peli.directors %}
+            {{item}}
+         {% endfor %}
+      </td>
+      <td class="infodesplegable">
+         {% for item in peli.actors %}
+            {{item}}
+         {% endfor %}
+      </td>
+      <td class="infodesplegable">
+         <ol>
+         {% for item in peli.most_related_movies %}
+            <li>{{item.title}}: {{item.year}}</li>
+         {% endfor %}
+         </ol> 
+      </td>
+      <td class="infodesplegable">
+         <ol>
+            {% for item in peli.related_movies %}
+               <li>{{item.title}}: {{item.year}}</li>
+            {% endfor %}
+            </ol> 
+      </td>
+   </tr>
+   {% endfor %}
+   </table>
+
+   <script src={{ url_for('static', filename='js/historial.js') }}></script>
+
+{% endblock%}
