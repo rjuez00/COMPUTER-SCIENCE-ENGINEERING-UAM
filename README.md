@@ -7,4 +7,4 @@ Some of the languages used during my practices are:
 ```C, Java, Python, VHDL, x86, MIPS, Prolog, Bison, PostgreSQL, MySQL, HTML, CSS, JavaScript...```
 There are also subjects like SEPRO and INGS where we did technical documentation for software engineering projects.
 
-I hope this helps someone.
+I hope this helps someone, I'm currently starting my final year, as I complete more projects I will add them here.
