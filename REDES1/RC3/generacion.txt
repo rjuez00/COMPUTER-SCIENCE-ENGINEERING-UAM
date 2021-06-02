@@ -1,0 +1,9 @@
+Generando traza (traza.pcap) para la pareja 5 del grupo 1391. (id=139105)
+Epoch de inicio: 1606733784
+
+Información útil para el estudiante:
+La dirección MAC que deberá tener en cuenta es: 00:11:88:CC:33:15
+La dirección IP (origen o destino) del flujo TCP que deberá tener en cuenta es: 100.6.229.154
+El puerto (origen o destino) del flujo UDP que deberá tener en cuenta es: 2883
+
+PCAP generado con éxito!

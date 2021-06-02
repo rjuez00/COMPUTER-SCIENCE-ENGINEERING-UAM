@@ -1,0 +1,39 @@
+Hecho por: Angel Casanova Bienzobas
+           Rodrigo Juez Hernández
+
+--COMENTARIO:
++ Todas las justificaciones sobre cada uno de los aparatados estan comentadas en detalle en la memoria de la practica,
+por tanto hemos utilizado este documento a modo de 'checklist' para garantizar que no nos hemos dejado nada por hacer.
+Hemos realizado todos los apartados.
+
++ Hemos incluido un makefile, para tirar el progrma con la MAC, IP y el puerto TCP que nos indicaba el generador.
+
+--CRITERIOS DE EVALUACION:
+
++ Fichero leeme.txt bien explicado: Realizado. Creemos haber redactado bien este documento.
+
++ SCRIPT:
+-- Cálculo de porcentajes por protocolos: Realizado. Los calculos y filtros utilizados estan expuestos en la memoria.
+
+-- Obtención del top de puertos: Realizado: Los calculos y filtros utilizados estan expuestos en la memoria.
+
+-- Obtención del top de direcciones IP: Realizado: Los calculos y filtros utilizados estan expuestos en la memoria.
+
+-- Cálculo del caudal/throughput/tasa/ancho de banda por sentido: Realizado: Los calculos y filtros utilizados estan expuestos en la memoria.
+
+-- Obtención de la ECDF del tamaño de paquetes: Realizado: Los calculos y filtros utilizados estan expuestos en la memoria.
+
+-- Obtención de la ECDF de los interarrivals/intervalos de los flujos indicados por el generador de PCAP: Realizado: Los calculos y filtros utilizados estan expuestos en la memoria.
+
++ Memoria:
+-- Porcentajes por protocolos:  Los calculos y filtros utilizados estan expuestos en la memoria.
+
+-- Top de puertos: Los calculos y filtros utilizados estan expuestos en la memoria.
+
+-- Top de direcciones IP: Los calculos y filtros utilizados estan expuestos en la memoria.
+
+-- Series temporales del caudal/throughput/tasa/ancho de banda por sentido: Los calculos y filtros utilizados estan expuestos en la memoria.
+
+-- ECDFs del tamaño de paquetes: Los calculos y filtros utilizados estan expuestos en la memoria.
+
+-- ECDFs de los interarrivals/intervalos de los flujos indicados por el generador de PCAP: Los calculos y filtros utilizados estan expuestos en la memoria.

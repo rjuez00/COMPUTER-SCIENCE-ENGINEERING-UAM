@@ -1,0 +1,21 @@
+Hecho por: Angel Casanova Bienzobas
+           Rodrigo Juez Hernández
+
+--COMENTARIO: Hemos añadido un .pdf a esta entrega para añadir alli las capturas de pantalla que demuestran que 	      nuestro programa funciona.
+
+--CRITERIOS DE EVALUACION:
+
++ Normativa de entrega cumplida en su totalidad: Realizado. Varias relecturas del enunciado.
+
++ Contar paquetes de una traza: Realizado. Se ha comprobado que el número de paquete que muestra nuestro programa coincide con el que indica Wireshark, en el documento practica1captura.png se corrobora que nuestro programa funciona.
+
++ Contar paquetes de la interfaz de red: Realizado, el programa cuenta el numero de paquetes capturados o analizados tras pulsar ctrl+C.
+
++ Almacenar en una traza el tráfico capturado en vivo: Realizado. Se ha comprobado que todos los bytes de la traza capturado coincide con lo que indica Wireshark en un conjunto diverso de paquetes.
+
++ Modificar fecha correctamente: Realizado. Se guardan en formato Unix Epoch con un offset de 30 minutos (tiempo humano)
+
++ Imprimir los N primeros bytes de un paquete y validarlo con Wireshark (captura de pantalla): Realizado: Se imprimen correctamente solamente los N primeros bytes o en el caso de ser menos, todos(i.e. si se espeficica imprimir 50 bytes pero el paquete solomente tiene 14 bytes, se imprimiran los 14 bytes).
+
++ Cuestionario "Ejercicios de captura de tráfico": Realizado: Se entregan todos los ejercicios en un .pdf, cada uno de ellos expliacado en el documento
+ 

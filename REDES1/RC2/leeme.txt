@@ -1,0 +1,28 @@
+Hecho por: Angel Casanova Bienzobas
+           Rodrigo Juez Hernández
+
+--COMENTARIO: 
+
+--CRITERIOS DE EVALUACION:
+
++ Normativa de entrega cumplida en su totalidad: Realizado. Varias relecturas del enunciado.
+
++ Fichero leeme.txt bien explicado: Realizado. Creemos haber redactado bien este documento.
+
++ Recibir tramas Ethernet, realizar comprobaciones y llamar correctamente a la función de callback de nivel superior: Realizado, hemos comprobado la recepcion de las tramas etherneet con la ayuda de las herramientas mininet y wireshark, donde hemos visto que revivimos ARP replys tanto por parte de el nodo desehado (h2) como por parte del propio sistema operativo o solo por uno de ellos si asi lo especificamos.
+
++ Enviar tramas Ethernet correctamente: Realizado, hemos visto en wireshark que las tramas Ethernet se envian correctamente, un maximo de tres veces en caso de que no se obtenga respuesta en las primeras peticiones. 
+
++ Enviar correctamente peticiones ARP: Realizado, Wireshark, reconoce nuestras tramas como tramas de protocolo ARP, por lo que creemos que hemos diseñado bien el standard ARP. 
+
++ Procesar correctamente peticiones ARP recibidas: Realizado, Una vez recibida la ARP request, se procesa bien y en caso de ser el destino de esa ARP Request, se prepara una ARP Reply que el origen recibe correctamente ya que nuestro programa inprime la direccion Ethernet de la IP que hemos solicitado
+
++ Enviar correctamente respuestas ARP: Realizado, por lo explicado en el apartado anterior, hemos comprobado que la direccion MAC que nuestro programa proporciona coincide con la direccion Ethernet del nodo deseado.
+
++ Procesar correctamente respuestas ARP: Realizado, explicado en el apartado anterior.
+
++ Manejo correcto de la caché ARP: Realizado, tras preguntar por una direccion MAC, esta se queda reflejada en la cache por un perido finito de tiempo especificado en el script practica2.py, esto se puede comprobar, intrduciondo la letra 'p' en nuestro script tras haber preguntado por una IP
+
++ Uso correcto de Locks: Realizado, hemos usado los Locks (Semaforos), para modificar las variables globales, es decir, hemos protegido la escritura para evitar condiones de carrera, también hemos protegido las lecturas para evitar cambios durante el proceso.
+
++ Realiza correctamente el ARP gratuito: Realizado, se realiza un ARP gratuito cada vez que se ejecuta nuestro script, si se detecta que existe un nodo que tenga la misma IP a nivel de red, el programa muestra un mensaje de error, indicando lo sucedido y se cierra

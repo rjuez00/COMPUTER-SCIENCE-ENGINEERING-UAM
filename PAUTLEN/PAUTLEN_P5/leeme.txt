@@ -1,0 +1,5 @@
+works: aritmeticas, funciones, vectores, if, logicas, while, errors declaraciones
+
+TODO:
+    hacer scanf y printf en funciones locales
+    revisar reglas con diapos
