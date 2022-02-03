@@ -1,0 +1,53 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1045 &1
+EditorBuildSettings:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/Lobby.unity
+    guid: 9fc0d4010bbf28b4594072e72b8655ab
+  - enabled: 1
+    path: Assets/Scenes/Menus/MenuCarrera.unity
+    guid: a08a1d21ef5f3174293db475f9cbe64f
+  - enabled: 1
+    path: Assets/Scenes/Menus/MenuPursuit.unity
+    guid: 2ebea66fe6d79d14aa70772a8fb23a56
+  - enabled: 1
+    path: Assets/Scenes/Menus/MenuTimeAttack.unity
+    guid: c5da677bcc3bdc040aab1876b767d38a
+  - enabled: 1
+    path: Assets/Scenes/PursuitScene.unity
+    guid: f8c6070c45a4c6247b208818321ce23d
+  - enabled: 1
+    path: Assets/Scenes/Loading.unity
+    guid: 5855690470986b14ab3f75e9858aa1f5
+  - enabled: 1
+    path: Assets/Scenes/RaceCircuits/MountainRace.unity
+    guid: 8c9e03ecbcc6abd4ab965f79822a53a6
+  - enabled: 1
+    path: Assets/Scenes/awakeScene.unity
+    guid: 8531ffe47897d6f4a9d74f36fa6046b3
+  - enabled: 1
+    path: Assets/Scenes/RaceCircuits/SchoolRace.unity
+    guid: ddeb6589f1a2f1b4f8dc8fdbd781064c
+  - enabled: 1
+    path: Assets/Scenes/RaceCircuits/CityRace.unity
+    guid: 25212de8c63157e4e89cf625f876f0fb
+  - enabled: 1
+    path: Assets/Scenes/RaceCircuits/LakeRace/race_track_lake.unity
+    guid: 2e1336748f3797f4798cf9e588e2620f
+  - enabled: 1
+    path: Assets/Scenes/TimeAttackCircuits/MountainTimeAttack.unity
+    guid: 16db768693079614f8bc89aeb0f28e61
+  - enabled: 1
+    path: Assets/Scenes/TimeAttackCircuits/CityTimeAttack.unity
+    guid: 9b67bdfc78e36554ca133f87d1e5f300
+  - enabled: 1
+    path: Assets/Scenes/TimeAttackCircuits/SchoolTimeAttack.unity
+    guid: 87144ee6f8801a84bbcd671bcf884fc6
+  - enabled: 1
+    path: Assets/Scenes/TimeAttackCircuits/LakeTimeAttack.unity
+    guid: ed56b766450e99f4ba8562fb83c70657
+  m_configObjects: {}

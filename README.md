@@ -4,7 +4,7 @@ These are all the practices I could recover. Although there are some subjects I 
 Some subjects were attended in Spanish while others in English, I'm aware that the bilingual degree has been discontinued in this university due to lack of resources but the contents are the same in Spanish and English so it can help you anyway.
 
 Some of the languages used during my practices are:
-```C, C++, Java, Python (matplotlib, tensorflow, sklearn, numpy, pandas...), VHDL, x86, MIPS, Prolog, Bison, PostgreSQL, MySQL, HTML, CSS, JavaScript...```
-There are also subjects like SEPRO and INGS where we did technical documentation for software engineering projects. And ORGEM where I learnt engineering economy.
+```C, Java, Python, VHDL, x86, MIPS, Prolog, Bison, PostgreSQL, MySQL, HTML, CSS, JavaScript...```
+There are also subjects like SEPRO and INGS where we did technical documentation for software engineering projects.
 
-I hope this helps someone, I'm currently starting my TFG, and down to my last subject "NEUROCOMPUTATION" which is Deep Learning, Neural Networks and more, I'll be using C++ for the práctices.
+I hope this helps someone, I'm currently starting my final year, as I complete more projects I will add them here.
